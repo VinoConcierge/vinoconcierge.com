@@ -1,0 +1,111 @@
+// button styling base mixin
+
+	// action button definition
+
+	$font_size: 13px;
+
+	@mixin actionButton($base_color, $to_color, $button_size, $font_size) {
+	    -webkit-box-sizing: padding-box;
+	    display: inline-block;
+	    color: #fff !important;
+	    text-decoration: none;
+	    font-size: $font_size;
+	    font-weight: bold;
+		text-align: center;
+		line-height: $button_size;
+		padding: 0 ($button_size / 2);
+		height: $button_size;
+		@include border-radius(5px);
+		@include linear-gradient(color-stops(lighten($to_color, 10%), $base_color));
+		text-shadow: rgba(0,0,0,.35) 0px -1px 1px;
+		@include multi-shadow(rgba(0,0,0,.3) 0 1px 2px, rgba(255,255,255, .5) 0 1px 1px inset);	
+		border: 1px solid $base_color;	
+		&:hover {
+		    @include linear-gradient(color-stops(lighten($to_color, 15%), lighten($base_color, 5%)));	 
+		  	}	
+  //  	&:after {
+  //  		content: " »";
+  //  		font-size: $font_size + 2;
+  //  		}
+		}
+		
+	@mixin toggleButton($bg_color, $text_color, $text_shadow) {
+	   -webkit-box-sizing: padding-box;
+	   display: inline-block;
+       height: 32px;
+       @include border-radius(5px);
+       @include box-shadow(rgba(0,0,0,.1), 0px, 2px, 4px);        
+       background-color: $bg_color;
+       border: 1px solid darken($bg_color, 7%);
+       border-top-color: $bg_color;
+       border-bottom-color: darken($bg_color, 14%);
+       &:hover {
+		 top: -2px;
+   		 height: 30px;
+         cursor: pointer;
+	     } 		
+	   span {
+	   	 @include Arial;
+	   	 @include border-radius(4px 4px 5px 5px);
+	 	 @include linear-gradient(color-stops(lighten($bg_color,14%),lighten($bg_color, 8%)), top, $Noise);
+	   	 font-weight: bold;
+	 	 color: $text_color;
+	   	 text-shadow: $text_shadow;
+	 	 padding: 0 12px;
+	 	 font-size: 14px;	 
+    	 outline: none;
+         display: block;
+         line-height: 26px;
+         height: 26px;
+         text-align: center;		   	 
+	  	 border: 1px solid rgba(255,255,255,.25);
+	  	 border-bottom: 1px solid rgba(255,255,255,.45);
+	  	 text-transform: uppercase;
+	  	 &:hover {
+	  		top: 0;
+	  		}
+         }
+       &:active {
+	   	 span {
+			background: none;
+			border-color: rgba(255,255,255,.05);
+			border-bottom: 1px solid rgba(255,255,255,.45);
+			}       	
+			@include linear-gradient(color-stops(lighten($bg_color,10%),lighten($bg_color, 4%)));
+			border-top-color: darken($bg_color, 15%);	
+        	@include box-shadow(rgba(0,0,0,.4), 0, 2px, 3px, -2px, inset);			
+			height:28px;
+			top:0;
+		  }
+	  &.active {
+	  	  @extend :active;
+	      }
+      }
+
+
+
+	@mixin insetButton($base_color, $to_color) {
+		@include border-radius(5px);
+		@extend .arial;		
+		@include linear-gradient(color-stops(lighten($to_color, 6%), lighten($base_color, 2%)));
+		@include multi-shadow(0 1px 2px 0 rgba(0,0,0,.8) inset, 0 1px 0 rgba(255,255,255,1));
+		color: #fff;
+		font-weight: bold;
+		display: inline-block;				
+		font-size: 16px;
+		line-height: 30px;
+		padding: 0 12px;
+		margin: 0;
+		height: 30px;
+		cursor: pointer;		
+		text-shadow: 0 -1px 0 rgba(0,0,0,.4);
+		&:hover {
+			@include linear-gradient(color-stops($to_color, $base_color));			
+			}
+		&.active {
+			@include linear-gradient(color-stops(darken($to_color, 10%), darken($base_color, 2%)));
+			}
+		&:active {
+			@extend .active;
+			}
+		}

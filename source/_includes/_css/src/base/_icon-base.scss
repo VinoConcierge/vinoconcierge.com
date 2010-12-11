@@ -1,0 +1,2455 @@
+
+	@mixin iconBefore { 
+		margin-right: 10px; 	
+		line-height: 0px; 	
+		position: relative; 
+		top: 1px;
+		font-weight: normal;				
+		}
+
+	@mixin iconAfter {
+		@include iconBefore; 
+		margin-right: 0px; 	
+		margin-left: 10px;			
+		}
+				
+// icon mixins
+
+	// Set 1
+
+	@mixin inbox1 {
+		@extend .icon1;
+		content: "!";
+		}
+		
+	@mixin inbox2 {
+		@extend .icon1;
+		content: '"';
+		}
+	
+	@mixin inbox3 {
+		@extend .icon1;
+		content: "#";
+		}	
+
+	@mixin inbox4 {
+		@extend .icon1;
+		content: "$";
+		}
+	
+	@mixin cube1 {
+		@extend .icon1;
+		content: "%";
+		}
+	
+	@mixin arrowMulti1 {
+		@extend .icon1;
+		content: "&";
+		}
+	
+	@mixin arrowMulti2 {
+		@extend .icon1;
+		content: "'";
+		}
+
+	@mixin arrowBranch1 {
+		@extend .icon1;
+		content: "(";
+		}
+
+	@mixin arrowBranch2 {
+		@extend .icon1;
+		content: ")";
+		}
+
+	@mixin arrowFork1 {
+		@extend .icon1;
+		content: "*";
+		}
+
+	@mixin arrowMerge1 {
+		@extend .icon1;
+		content: "+";
+		}
+
+	@mixin arrowPointer1 {
+		@extend .icon1;
+		content: ",";
+		}
+
+	@mixin arrowPointer2 {
+		@extend .icon1;
+		content: "-";
+		}
+
+	@mixin arrowMore1 {
+		@extend .icon1;
+		content: ".";
+		}
+
+	@mixin arrowMore2 {
+		@extend .icon1;
+		content: "/";
+		}
+
+	@mixin arrowMore3 {
+		@extend .icon1;
+		content: "0";
+		}
+
+	@mixin rotate {
+		@extend .icon1;
+		content: "1";
+		}
+
+	@mixin drag {
+		@extend .icon1;
+		content: "2";
+		}
+
+	@mixin lines {
+		@extend .icon1;
+		content: "3";
+		}
+
+	@mixin columns1 {
+		@extend .icon1;
+		content: "4";
+		}
+
+	@mixin columns2 {
+		@extend .icon1;
+		content: "5";
+		}
+
+	@mixin eject1 {
+		@extend .icon1;
+		content: "6";
+		}
+
+	@mixin inkpen1 {
+		@extend .icon1;
+		content: "7";
+		}
+
+	@mixin inkpen2 {
+		@extend .icon1;
+		content: "8";
+		}
+
+	@mixin paintbrush1 {
+		@extend .icon1;
+		content: "9";
+		}
+
+	@mixin paintbrush2 {
+		@extend .icon1;
+		content: ":";
+		}
+
+	@mixin ruler {
+		@extend .icon1;
+		content: ";";
+		}
+
+	@mixin art1 {
+		@extend .icon1;
+		content: "<";
+		}
+
+	@mixin art2 {
+		@extend .icon1;
+		content: "=";
+		}
+
+	@mixin righttriangle {
+		@extend .icon1;
+		content: ">";
+		}
+
+	@mixin hammer {
+		@extend .icon1;
+		content: "?";
+		}		
+	
+	@mixin tools1 {
+		@extend .icon1;
+		content: "@";
+		}		
+
+	@mixin scissors {
+		@extend .icon1;
+		content: "A";
+		}		
+
+	@mixin eyedropper {
+		@extend .icon1;
+		content: "B";
+		}		
+
+	@mixin crop {
+		@extend .icon1;
+		content: "C";
+		}		
+
+	@mixin layers {
+		@extend .icon1;
+		content: "D";
+		}		
+
+	@mixin bullseye {
+		@extend .icon1;
+		content: "E";
+		}		
+
+	@mixin shapes {
+		@extend .icon1;
+		content: "F";
+		}		
+
+	@mixin overlap {
+		@extend .icon1;
+		content: "G";
+		}		
+
+	@mixin keyhole1 {
+		@extend .icon1;
+		content: "H";
+		}		
+		
+	@mixin locked1 {
+		@extend .icon1;
+		content: "I";
+		}				
+		
+	@mixin unlocked1 {
+		@extend .icon1;
+		content: "J";
+		}				
+		
+	@mixin keyhole2 {
+		@extend .icon1;
+		content: "K";
+		}				
+		
+	@mixin key {
+		@extend .icon1;
+		content: "L";
+		}			
+		
+	@mixin keys {
+		@extend .icon1;
+		content: "M";
+		}				
+		
+	@mixin arrowUp1 {
+		@extend .icon1;
+		content: "N";
+		}				
+
+	@mixin keyboard {
+		@extend .icon1;
+		content: "O";
+		}				
+
+	@mixin timerstart {
+		@extend .icon1;
+		content: "P";
+		}				
+		
+	@mixin timerend {
+		@extend .icon1;
+		content: "Q";
+		}				
+				
+	@mixin thermometer {
+		@extend .icon1;
+		content: "R";
+		}				
+				
+	@mixin cloud1 {
+		@extend .icon1;
+		content: "S";
+		}				
+				
+	@mixin lifesaver {
+		@extend .icon1;
+		content: "T";
+		}				
+				
+	@mixin gear1 {
+		@extend .icon1;
+		content: "U";
+		}				
+				
+	@mixin gear2 {
+		@extend .icon1;
+		content: "V";
+		}				
+				
+	@mixin sun1 {
+		@extend .icon1;
+		content: "W";
+		}				
+				
+	@mixin sun2 {
+		@extend .icon1;
+		content: "X";
+		}				
+				
+	@mixin arrowExpand1 {
+		@extend .icon1;
+		content: "Y";
+		}				
+				
+	@mixin block {
+		@extend .icon1;
+		content: "Z";
+		}				
+				
+	@mixin chip {
+		@extend .icon1;
+		content: "[";
+		}				
+
+	@mixin filmstrip1 {
+		@extend .icon1;
+		content: '&#92;';
+		}				
+						
+	@mixin laptop {
+		@extend .icon1;
+		content: "]";
+		}				
+
+	@mixin floppy {
+		@extend .icon1;
+		content: "^";
+		}				
+
+	@mixin folder {
+		@extend .icon1;
+		content: "_";
+		}				
+
+	@mixin fold {
+		@extend .icon1;
+		content: "`";
+		}				
+				
+	@mixin fold2 {
+		@extend .icon1;
+		content: "a";
+		}				
+		
+	@mixin bluetooth {
+		@extend .icon1;
+		content: "b";
+		}				
+
+	@mixin arrowIn {
+		@extend .icon1;
+		content: "c";
+		}				
+		
+	@mixin arrowOut1 {
+		@extend .icon1;
+		content: "e";
+		}				
+
+	@mixin arrowOut2 {
+		@extend .icon1;
+		content: "f";
+		}				
+		
+	@mixin ipod {
+		@extend .icon1;
+		content: "f";
+		}				
+		
+	@mixin ipad {
+		@extend .icon1;
+		content: "g";
+		}				
+		
+	@mixin ipod {
+		@extend .icon1;
+		content: "h";
+		}				
+		
+	@mixin thumbsup1 {
+		@extend .icon1;
+		content: "i";
+		}				
+		
+	@mixin thumbsdown1 {
+		@extend .icon1;
+		content: "j";
+		}				
+				
+	@mixin thumbsup2 {
+		@extend .icon1;
+		content: "k";
+		}				
+				
+	@mixin thumbsdown2 {
+		@extend .icon1;
+		content: "l";
+		}				
+				
+	@mixin star1 {
+		@extend .icon1;
+		content: "m";
+		}				
+		
+	@mixin arrowDown1 {
+		@extend .icon1;
+		content: "n";
+		}				
+						
+	@mixin arrowIn2 {
+		@extend .icon1;
+		content: "o";
+		}				
+				
+	@mixin arrowBolt1 {
+		@extend .icon1;
+		content: "p";
+		}				
+				
+	@mixin arrowBolt2 {
+		@extend .icon1;
+		content: "q";
+		}				
+				
+	@mixin camera1 {
+		@extend .icon1;
+		content: "r";
+		}				
+				
+	@mixin camera2 {
+		@extend .icon1;
+		content: "s";
+		}				
+				
+	@mixin lense {
+		@extend .icon1;
+		content: "t";
+		}				
+		
+	@mixin filmstrip2 {
+		@extend .icon1;
+		content: "u";
+		}				
+				
+	@mixin snes {
+		@extend .icon1;
+		content: "v";
+		}				
+				
+	@mixin pacman {
+		@extend .icon1;
+		content: "w";
+		}				
+				
+	@mixin chickenleg {
+		@extend .icon1;
+		content: "x";
+		}				
+				
+	@mixin crossbones {
+		@extend .icon1;
+		content: "y";
+		}				
+				
+	@mixin pill {
+		@extend .icon1;
+		content: "z";
+		}				
+				
+	@mixin paperplane {
+		@extend .icon1;
+		content: "{";
+		}				
+
+	@mixin dumbbell {
+		@extend .icon1;
+		content: "|";
+		}				
+					
+	@mixin psd {
+		@extend .icon1;
+		content: "}";
+		}				
+
+// Set 2 
+				
+	@mixin java1 {
+		@extend .icon2;
+		content: "!";
+		}
+		
+	@mixin java2 {
+		@extend .icon2;
+		content: '"';
+		}
+	
+	@mixin bed {
+		@extend .icon2;
+		content: "#";
+		}	
+
+	@mixin dog {
+		@extend .icon2;
+		content: "$";
+		}
+	
+	@mixin sandals {
+		@extend .icon2;
+		content: "%";
+		}
+	
+	@mixin footprint1 {
+		@extend .icon2;
+		content: "&";
+		}
+	
+	@mixin footprint2 {
+		@extend .icon2;
+		content: "'";
+		}
+
+	@mixin car {
+		@extend .icon2;
+		content: "(";
+		}
+
+	@mixin bus {
+		@extend .icon2;
+		content: ")";
+		}
+
+	@mixin truck1 {
+		@extend .icon2;
+		content: "*";
+		}
+
+	@mixin truck2 {
+		@extend .icon2;
+		content: "+";
+		}
+
+	@mixin truck3 {
+		@extend .icon2;
+		content: ",";
+		}
+
+	@mixin airplane {
+		@extend .icon2;
+		content: "-";
+		}
+
+	@mixin football {
+		@extend .icon2;
+		content: ".";
+		}
+
+	@mixin soccerball {
+		@extend .icon2;
+		content: "/";
+		}
+
+	@mixin guitar {
+		@extend .icon2;
+		content: "0";
+		}
+
+	@mixin musicnote1 {
+		@extend .icon2;
+		content: "1";
+		}
+
+	@mixin stamp1 {
+		@extend .icon2;
+		content: "2";
+		}
+
+	@mixin stamp2 {
+		@extend .icon2;
+		content: "3";
+		}
+
+	@mixin stamp3 {
+		@extend .icon2;
+		content: "4";
+		}
+
+	@mixin stamp4 {
+		@extend .icon2;
+		content: "5";
+		}
+
+	@mixin openBook1 {
+		@extend .icon2;
+		content: "6";
+		}
+
+	@mixin doc1 {
+		@extend .icon2;
+		content: "7";
+		}
+
+	@mixin doc2 {
+		@extend .icon2;
+		content: "8";
+		}
+
+	@mixin notepad1 {
+		@extend .icon2;
+		content: "9";
+		}
+
+	@mixin clipboard1 {
+		@extend .icon2;
+		content: ":";
+		}
+
+	@mixin clipboard2 {
+		@extend .icon2;
+		content: ";";
+		}
+
+	@mixin indexCard {
+		@extend .icon2;
+		content: "<";
+		}
+
+	@mixin purse {
+		@extend .icon2;
+		content: "=";
+		}
+
+	@mixin suitcase {
+		@extend .icon2;
+		content: ">";
+		}
+
+	@mixin basket {
+		@extend .icon2;
+		content: "?";
+		}
+
+	@mixin piggybank {
+		@extend .icon2;
+		content: "@";
+		}		
+	
+	@mixin linegraph1 {
+		@extend .icon2;
+		content: "A";
+		}		
+
+	@mixin linegraph2 {
+		@extend .icon2;
+		content: "B";
+		}		
+
+	@mixin wine1 {
+		@extend .icon2;
+		content: "C";
+		}		
+
+	@mixin wine2 {
+		@extend .icon2;
+		content: "D";
+		}		
+
+	@mixin wineglass {
+		@extend .icon2;
+		content: "E";
+		}		
+
+	@mixin leaf1 {
+		@extend .icon2;
+		content: "F";
+		}		
+
+	@mixin leaf2 {
+		@extend .icon2;
+		content: "G";
+		}		
+
+	@mixin bell {
+		@extend .icon2;
+		content: "H";
+		}		
+
+	@mixin anchor {
+		@extend .icon2;
+		content: "I";
+		}		
+		
+	@mixin megaphone {
+		@extend .icon2;
+		content: "J";
+		}				
+		
+	@mixin signs {
+		@extend .icon2;
+		content: "K";
+		}				
+		
+	@mixin flag {
+		@extend .icon2;
+		content: "L";
+		}				
+		
+	@mixin halfmoon {
+		@extend .icon2;
+		content: "M";
+		}			
+		
+	@mixin tulip {
+		@extend .icon2;
+		content: "N";
+		}				
+		
+	@mixin ticket1 {
+		@extend .icon2;
+		content: "O";
+		}				
+
+	@mixin ticket2 {
+		@extend .icon2;
+		content: "P";
+		}				
+
+	@mixin cone {
+		@extend .icon2;
+		content: "Q";
+		}				
+		
+	@mixin pictureFrame1 {
+		@extend .icon2;
+		content: "R";
+		}				
+				
+	@mixin presentation1 {
+		@extend .icon2;
+		content: "S";
+		}				
+				
+	@mixin bargraph1 {
+		@extend .icon2;
+		content: "T";
+		}				
+				
+	@mixin curvyRoad {
+		@extend .icon2;
+		content: "U";
+		}				
+				
+	@mixin popcorn {
+		@extend .icon2;
+		content: "V";
+		}				
+				
+	@mixin speechbubble1 {
+		@extend .icon2;
+		content: "W";
+		}				
+				
+	@mixin utensils {
+		@extend .icon2;
+		content: "X";
+		}				
+				
+	@mixin buildings {
+		@extend .icon2;
+		content: "Y";
+		}				
+				
+	@mixin glasses {
+		@extend .icon2;
+		content: "Z";
+		}				
+				
+	@mixin couch {
+		@extend .icon2;
+		content: "[";
+		}				
+				
+	@mixin twitter1 {
+		@extend .icon2;
+		content: '&#92;';
+		}				
+						
+	@mixin twitter2 {
+		@extend .icon2;
+		content: "]";
+		}				
+
+	@mixin twitter3 {
+		@extend .icon2;
+		content: "^";
+		}				
+
+	@mixin facebook {
+		@extend .icon2;
+		content: "_";
+		}				
+
+	@mixin dribbble1 {
+		@extend .icon2;
+		content: "`";
+		}				
+				
+	@mixin dribbble2 {
+		@extend .icon2;
+		content: "a";
+		}				
+		
+	@mixin paypal1 {
+		@extend .icon2;
+		content: "b";
+		}				
+
+	@mixin paypal2 {
+		@extend .icon2;
+		content: "c";
+		}				
+		
+	@mixin google {
+		@extend .icon2;
+		content: "d";
+		}				
+
+	@mixin arrowMove {
+		@extend .icon2;
+		content: "e";
+		}				
+
+	@mixin arrowCollapse1 {
+		@extend .icon2;
+		content: "f";
+		}				
+		
+	@mixin arrowExpand2 {
+		@extend .icon2;
+		content: "g";
+		}				
+		
+	@mixin arrowExpand3 {
+		@extend .icon2;
+		content: "h";
+		}				
+		
+	@mixin arrowExpand4 {
+		@extend .icon2;
+		content: "i";
+		}				
+		
+	@mixin arrowBack1 {
+		@extend .icon2;
+		content: "j";
+		}				
+				
+	@mixin arrowMulti3 {
+		@extend .icon2;
+		content: "k";
+		}				
+				
+	@mixin arrowMulti4 {
+		@extend .icon2;
+		content: "l";
+		}				
+				
+	@mixin arrowMulti5 {
+		@extend .icon2;
+		content: "m";
+		}				
+		
+	@mixin arrowCollapse2 {
+		@extend .icon2;
+		content: "n";
+		}				
+						
+	@mixin arrowReplay1 {
+		@extend .icon2;
+		content: "o";
+		}				
+				
+	@mixin arrowMulti6 {
+		@extend .icon2;
+		content: "p";
+		}				
+				
+	@mixin arrowMulti7 {
+		@extend .icon2;
+		content: "q";
+		}				
+				
+	@mixin arrowBranch3 {
+		@extend .icon2;
+		content: "r";
+		}				
+				
+	@mixin arrowReplay2 {
+		@extend .icon2;
+		content: "s";
+		}				
+				
+	@mixin arrowReplay3 {
+		@extend .icon2;
+		content: "t";
+		}				
+		
+	@mixin arrowReplay4 {
+		@extend .icon2;
+		content: "u";
+		}				
+				
+	@mixin arrowReplay5 {
+		@extend .icon2;
+		content: "v";
+		}				
+				
+	@mixin arrowReplay6 {
+		@extend .icon2;
+		content: "w";
+		}				
+				
+	@mixin arrowReplay7 {
+		@extend .icon2;
+		content: "x";
+		}				
+				
+	@mixin arrowBack2 {
+		@extend .icon2;
+		content: "y";
+		}				
+				
+	@mixin arrowOut3 {
+		@extend .icon2;
+		content: "z";
+		}				
+				
+	@mixin arrowReplay8 {
+		@extend .icon2;
+		content: "{";
+		}				
+
+	@mixin arrowReplay9 {
+		@extend .icon2;
+		content: "|";
+		}				
+					
+	@mixin arrowBack3 {
+		@extend .icon2;
+		content: "}";
+		}				
+
+	@mixin arrowForward1 {
+		@extend .icon2;
+		content: "~";
+		}	
+
+// Set 3 
+				
+	@mixin arrowForward2 {
+		@extend .icon3;
+		content: "!";
+		}
+		
+	@mixin arrowMulti8 {
+		@extend .icon3;
+		content: '"';
+		}
+	
+	@mixin arrowDown2 {
+		@extend .icon3;
+		content: "#";
+		}	
+
+	@mixin arrowUp2 {
+		@extend .icon3;
+		content: "$";
+		}
+	
+	@mixin arrowForward3 {
+		@extend .icon3;
+		content: "%";
+		}
+	
+	@mixin arrowUp3 {
+		@extend .icon3;
+		content: "&";
+		}
+	
+	@mixin arrowUp4 {
+		@extend .icon3;
+		content: "'";
+		}
+
+	@mixin arrowMore4 {
+		@extend .icon3;
+		content: "(";
+		}
+
+	@mixin arrowMore5 {
+		@extend .icon3;
+		content: ")";
+		}
+
+	@mixin arrowDown3 {
+		@extend .icon3;
+		content: "*";
+		}
+
+	@mixin play1 {
+		@extend .icon3;
+		content: "+";
+		}
+
+	@mixin play2 {
+		@extend .icon3;
+		content: ",";
+		}
+
+	@mixin fastForward {
+		@extend .icon3;
+		content: "-";
+		}
+
+	@mixin pause {
+		@extend .icon3;
+		content: ".";
+		}
+
+	@mixin stop {
+		@extend .icon3;
+		content: "/";
+		}
+
+	@mixin record1 {
+		@extend .icon3;
+		content: "0";
+		}
+
+	@mixin record2 {
+		@extend .icon3;
+		content: "1";
+		}
+
+	@mixin add1 {
+		@extend .icon3;
+		content: "2";
+		}
+
+	@mixin rectangle1 {
+		@extend .icon3;
+		content: "3";
+		}
+
+	@mixin close1 {
+		@extend .icon3;
+		content: "4";
+		}
+
+	@mixin close2 {
+		@extend .icon3;
+		content: "5";
+		}
+
+	@mixin add2 {
+		@extend .icon3;
+		content: "6";
+		}
+
+	@mixin add3 {
+		@extend .icon3;
+		content: "7";
+		}
+
+	@mixin oval {
+		@extend .icon3;
+		content: "8";
+		}
+
+	@mixin subtract1 {
+		@extend .icon3;
+		content: "9";
+		}
+
+	@mixin close3 {
+		@extend .icon3;
+		content: ":";
+		}
+
+	@mixin close3 {
+		@extend .icon3;
+		content: ";";
+		}
+
+	@mixin prohibit1 {
+		@extend .icon3;
+		content: "<";
+		}
+
+	@mixin prohibit2 {
+		@extend .icon3;
+		content: "=";
+		}
+
+	@mixin close4 {
+		@extend .icon3;
+		content: ">";
+		}
+
+	@mixin close5 {
+		@extend .icon3;
+		content: "?";
+		}
+
+	@mixin check1 {
+		@extend .icon3;
+		content: "@";
+		}		
+	
+	@mixin check2 {
+		@extend .icon3;
+		content: "A";
+		}		
+
+	@mixin check3 {
+		@extend .icon3;
+		content: "B";
+		}		
+
+	@mixin check4 {
+		@extend .icon3;
+		content: "C";
+		}		
+
+	@mixin check5 {
+		@extend .icon3;
+		content: "D";
+		}		
+
+	@mixin search1 {
+		@extend .icon3;
+		content: "E";
+		}		
+
+	@mixin search2 {
+		@extend .icon3;
+		content: "F";
+		}		
+
+	@mixin search3 {
+		@extend .icon3;
+		content: "G";
+		}		
+
+	@mixin search4 {
+		@extend .icon3;
+		content: "H";
+		}		
+
+	@mixin question1 {
+		@extend .icon3;
+		content: "I";
+		}		
+		
+	@mixin question2 {
+		@extend .icon3;
+		content: "J";
+		}				
+		
+	@mixin info1 {
+		@extend .icon3;
+		content: "K";
+		}				
+		
+	@mixin info2 {
+		@extend .icon3;
+		content: "L";
+		}				
+		
+	@mixin info3 {
+		@extend .icon3;
+		content: "M";
+		}			
+		
+	@mixin info4 {
+		@extend .icon3;
+		content: "N";
+		}				
+		
+	@mixin mail1 {
+		@extend .icon3;
+		content: "O";
+		}				
+
+	@mixin mail2 {
+		@extend .icon3;
+		content: "P";
+		}				
+
+	@mixin mail3 {
+		@extend .icon3;
+		content: "Q";
+		}				
+		
+	@mixin mail4 {
+		@extend .icon3;
+		content: "R";
+		}				
+				
+	@mixin mail5 {
+		@extend .icon3;
+		content: "S";
+		}				
+				
+	@mixin mail6 {
+		@extend .icon3;
+		content: "T";
+		}				
+				
+	@mixin rss1 {
+		@extend .icon3;
+		content: "U";
+		}				
+				
+	@mixin rss2 {
+		@extend .icon3;
+		content: "V";
+		}				
+				
+	@mixin rss3 {
+		@extend .icon3;
+		content: "W";
+		}				
+				
+	@mixin rss4 {
+		@extend .icon3;
+		content: "X";
+		}				
+				
+	@mixin rss5 {
+		@extend .icon3;
+		content: "Y";
+		}				
+				
+	@mixin atom {
+		@extend .icon3;
+		content: "Z";
+		}				
+				
+	@mixin rss6 {
+		@extend .icon3;
+		content: "[";
+		}				
+				
+	@mixin json {
+		@extend .icon3;
+		content: '&#92;';
+		}				
+						
+	@mixin dashCircle {
+		@extend .icon3;
+		content: "]";
+		}				
+
+	@mixin dashSquare {
+		@extend .icon3;
+		content: "^";
+		}				
+
+	@mixin exclamation1 {
+		@extend .icon3;
+		content: "_";
+		}				
+
+	@mixin exclamation2 {
+		@extend .icon3;
+		content: "`";
+		}				
+				
+	@mixin calendar1 {
+		@extend .icon3;
+		content: "a";
+		}				
+		
+	@mixin calendar2 {
+		@extend .icon3;
+		content: "b";
+		}				
+
+	@mixin calendar3 {
+		@extend .icon3;
+		content: "c";
+		}				
+		
+	@mixin calendar4 {
+		@extend .icon3;
+		content: "d";
+		}				
+
+	@mixin notepad2 {
+		@extend .icon3;
+		content: "e";
+		}				
+
+	@mixin location1 {
+		@extend .icon3;
+		content: "f";
+		}				
+		
+	@mixin location2 {
+		@extend .icon3;
+		content: "g";
+		}				
+		
+	@mixin location3 {
+		@extend .icon3;
+		content: "h";
+		}				
+		
+	@mixin location4 {
+		@extend .icon3;
+		content: "i";
+		}				
+		
+	@mixin location5 {
+		@extend .icon3;
+		content: "j";
+		}				
+				
+	@mixin map1 {
+		@extend .icon3;
+		content: "k";
+		}				
+				
+	@mixin compass1 {
+		@extend .icon3;
+		content: "l";
+		}				
+				
+	@mixin compass2 {
+		@extend .icon3;
+		content: "m";
+		}				
+		
+	@mixin shield1 {
+		@extend .icon3;
+		content: "n";
+		}				
+						
+	@mixin shield2 {
+		@extend .icon3;
+		content: "o";
+		}				
+				
+	@mixin locked2 {
+		@extend .icon3;
+		content: "p";
+		}				
+				
+	@mixin unlocked2 {
+		@extend .icon3;
+		content: "q";
+		}				
+				
+	@mixin globe1 {
+		@extend .icon3;
+		content: "r";
+		}				
+				
+	@mixin doc3 {
+		@extend .icon3;
+		content: "s";
+		}				
+				
+	@mixin doc4 {
+		@extend .icon3;
+		content: "t";
+		}				
+		
+	@mixin doc5 {
+		@extend .icon3;
+		content: "u";
+		}				
+				
+	@mixin doc6 {
+		@extend .icon3;
+		content: "v";
+		}				
+				
+	@mixin doc7 {
+		@extend .icon3;
+		content: "w";
+		}				
+				
+	@mixin docAdd {
+		@extend .icon3;
+		content: "x";
+		}				
+				
+	@mixin docRemove {
+		@extend .icon3;
+		content: "y";
+		}				
+				
+	@mixin docMore {
+		@extend .icon3;
+		content: "z";
+		}				
+				
+	@mixin docCompose1 {
+		@extend .icon3;
+		content: "{";
+		}				
+
+	@mixin docCompose2 {
+		@extend .icon3;
+		content: "|";
+		}				
+					
+	@mixin docDownload {
+		@extend .icon3;
+		content: "}";
+		}				
+
+	@mixin docUpload {
+		@extend .icon3;
+		content: "~";
+		}	
+	
+// Set 4 
+				
+	@mixin doc8 {
+		@extend .icon4;
+		content: "!";
+		}
+		
+	@mixin doc9 {
+		@extend .icon4;
+		content: '"';
+		}
+	
+	@mixin doc10 {
+		@extend .icon4;
+		content: "#";
+		}	
+
+	@mixin doc11 {
+		@extend .icon4;
+		content: "$";
+		}
+	
+	@mixin doc12 {
+		@extend .icon4;
+		content: "%";
+		}
+	
+	@mixin folder1 {
+		@extend .icon4;
+		content: "&";
+		}
+	
+	@mixin folder2 {
+		@extend .icon4;
+		content: "'";
+		}
+
+	@mixin folder3 {
+		@extend .icon4;
+		content: "(";
+		}
+
+	@mixin folder4 {
+		@extend .icon4;
+		content: ")";
+		}
+
+	@mixin folder5 {
+		@extend .icon4;
+		content: "*";
+		}
+
+	@mixin folder6 {
+		@extend .icon4;
+		content: "+";
+		}
+
+	@mixin folder7 {
+		@extend .icon4;
+		content: ",";
+		}
+
+	@mixin folder8 {
+		@extend .icon4;
+		content: "-";
+		}
+
+	@mixin printer1 {
+		@extend .icon4;
+		content: ".";
+		}
+
+	@mixin printer2 {
+		@extend .icon4;
+		content: "/";
+		}
+
+	@mixin compose1 {
+		@extend .icon4;
+		content: "0";
+		}
+
+	@mixin compose2 {
+		@extend .icon4;
+		content: "1";
+		}
+
+	@mixin compose3 {
+		@extend .icon4;
+		content: "2";
+		}
+
+	@mixin compose4 {
+		@extend .icon4;
+		content: "3";
+		}
+
+	@mixin compose5 {
+		@extend .icon4;
+		content: "4";
+		}
+
+	@mixin wrench1 {
+		@extend .icon4;
+		content: "5";
+		}
+
+	@mixin wrench2 {
+		@extend .icon4;
+		content: "6";
+		}
+
+	@mixin tools2 {
+		@extend .icon4;
+		content: "7";
+		}
+
+	@mixin screwdriver {
+		@extend .icon4;
+		content: "8";
+		}
+
+	@mixin wrench3 {
+		@extend .icon4;
+		content: "9";
+		}
+
+	@mixin tools3 {
+		@extend .icon4;
+		content: ":";
+		}
+
+	@mixin volume1 {
+		@extend .icon4;
+		content: ";";
+		}
+
+	@mixin volume2 {
+		@extend .icon4;
+		content: "<";
+		}
+
+	@mixin volume3 {
+		@extend .icon4;
+		content: "=";
+		}
+
+	@mixin mute {
+		@extend .icon4;
+		content: ">";
+		}
+
+	@mixin volume4 {
+		@extend .icon4;
+		content: "?";
+		}
+
+	@mixin globe2 {
+		@extend .icon4;
+		content: "@";
+		}		
+	
+	@mixin globe3 {
+		@extend .icon4;
+		content: "A";
+		}		
+
+	@mixin clock1 {
+		@extend .icon4;
+		content: "B";
+		}		
+
+	@mixin clock2 {
+		@extend .icon4;
+		content: "C";
+		}		
+
+	@mixin display1 {
+		@extend .icon4;
+		content: "D";
+		}		
+
+	@mixin display2 {
+		@extend .icon4;
+		content: "E";
+		}		
+
+	@mixin display3 {
+		@extend .icon4;
+		content: "F";
+		}		
+
+	@mixin display4 {
+		@extend .icon4;
+		content: "G";
+		}		
+
+	@mixin display5 {
+		@extend .icon4;
+		content: "H";
+		}		
+
+	@mixin display6 {
+		@extend .icon4;
+		content: "I";
+		}		
+		
+	@mixin display7 {
+		@extend .icon4;
+		content: "J";
+		}				
+		
+	@mixin display8 {
+		@extend .icon4;
+		content: "K";
+		}				
+		
+	@mixin wifi1 {
+		@extend .icon4;
+		content: "L";
+		}				
+		
+	@mixin phone1 {
+		@extend .icon4;
+		content: "M";
+		}			
+		
+	@mixin phone2 {
+		@extend .icon4;
+		content: "N";
+		}				
+		
+	@mixin wifi2 {
+		@extend .icon4;
+		content: "O";
+		}				
+
+	@mixin battery1 {
+		@extend .icon4;
+		content: "P";
+		}				
+
+	@mixin battery2 {
+		@extend .icon4;
+		content: "Q";
+		}				
+		
+	@mixin battery3 {
+		@extend .icon4;
+		content: "R";
+		}				
+				
+	@mixin lightening1 {
+		@extend .icon4;
+		content: "S";
+		}				
+				
+	@mixin lightening2 {
+		@extend .icon4;
+		content: "T";
+		}				
+				
+	@mixin cloud2 {
+		@extend .icon4;
+		content: "U";
+		}				
+				
+	@mixin cloud3 {
+		@extend .icon4;
+		content: "V";
+		}				
+				
+	@mixin cloud4 {
+		@extend .icon4;
+		content: "W";
+		}				
+				
+	@mixin cloud5 {
+		@extend .icon4;
+		content: "X";
+		}				
+				
+	@mixin cloud6 {
+		@extend .icon4;
+		content: "Y";
+		}				
+				
+	@mixin cloud7 {
+		@extend .icon4;
+		content: "Z";
+		}				
+				
+	@mixin musicnote2 {
+		@extend .icon4;
+		content: "[";
+		}				
+				
+	@mixin musicnote3 {
+		@extend .icon4;
+		content: '&#92;';
+		}				
+						
+	@mixin inbox5 {
+		@extend .icon4;
+		content: "]";
+		}				
+
+	@mixin inbox6 {
+		@extend .icon4;
+		content: "^";
+		}				
+
+	@mixin outbox1 {
+		@extend .icon4;
+		content: "_";
+		}				
+
+	@mixin outbox2 {
+		@extend .icon4;
+		content: "`";
+		}				
+				
+	@mixin attach1 {
+		@extend .icon4;
+		content: "a";
+		}				
+		
+	@mixin attach2 {
+		@extend .icon4;
+		content: "b";
+		}				
+
+	@mixin attach3 {
+		@extend .icon4;
+		content: "c";
+		}				
+		
+	@mixin attach4 {
+		@extend .icon4;
+		content: "d";
+		}				
+
+	@mixin radioactive {
+		@extend .icon4;
+		content: "e";
+		}				
+
+	@mixin target {
+		@extend .icon4;
+		content: "f";
+		}				
+		
+	@mixin watch {
+		@extend .icon4;
+		content: "g";
+		}				
+		
+	@mixin tach1 {
+		@extend .icon4;
+		content: "h";
+		}				
+		
+	@mixin tach2 {
+		@extend .icon4;
+		content: "i";
+		}				
+		
+	@mixin tach3 {
+		@extend .icon4;
+		content: "j";
+		}				
+				
+	@mixin tach4 {
+		@extend .icon4;
+		content: "k";
+		}				
+				
+	@mixin eject2 {
+		@extend .icon4;
+		content: "l";
+		}				
+				
+	@mixin sun3 {
+		@extend .icon4;
+		content: "m";
+		}				
+		
+	@mixin sun4 {
+		@extend .icon4;
+		content: "n";
+		}				
+						
+	@mixin trash1 {
+		@extend .icon4;
+		content: "o";
+		}				
+				
+	@mixin trash2 {
+		@extend .icon4;
+		content: "p";
+		}				
+				
+	@mixin trash3 {
+		@extend .icon4;
+		content: "q";
+		}				
+				
+	@mixin home1 {
+		@extend .icon4;
+		content: "r";
+		}				
+				
+	@mixin home2 {
+		@extend .icon4;
+		content: "s";
+		}				
+				
+	@mixin star2 {
+		@extend .icon4;
+		content: "t";
+		}				
+		
+	@mixin star3 {
+		@extend .icon4;
+		content: "u";
+		}				
+				
+	@mixin star4 {
+		@extend .icon4;
+		content: "v";
+		}				
+				
+	@mixin heart1 {
+		@extend .icon4;
+		content: "w";
+		}				
+				
+	@mixin heart2 {
+		@extend .icon4;
+		content: "x";
+		}				
+				
+	@mixin video1 {
+		@extend .icon4;
+		content: "y";
+		}				
+				
+	@mixin video2 {
+		@extend .icon4;
+		content: "z";
+		}				
+				
+	@mixin video3 {
+		@extend .icon4;
+		content: "{";
+		}				
+
+	@mixin camera3 {
+		@extend .icon4;
+		content: "|";
+		}				
+					
+	@mixin camera4 {
+		@extend .icon4;
+		content: "}";
+		}				
+
+	@mixin camera5 {
+		@extend .icon4;
+		content: "~";
+		}	
+
+// Set 5 
+				
+	@mixin camera6 {
+		@extend .icon5;
+		content: "!";
+		}
+		
+	@mixin pricetag1 {
+		@extend .icon5;
+		content: '"';
+		}
+	
+	@mixin pricetag2 {
+		@extend .icon5;
+		content: "#";
+		}	
+
+	@mixin pricetag3 {
+		@extend .icon5;
+		content: "$";
+		}
+	
+	@mixin openquote1 {
+		@extend .icon5;
+		content: "%";
+		}
+	
+	@mixin openquote2 {
+		@extend .icon5;
+		content: "&";
+		}
+	
+	@mixin openquote3 {
+		@extend .icon5;
+		content: "'";
+		}
+
+	@mixin closequote1 {
+		@extend .icon5;
+		content: "(";
+		}
+
+	@mixin closequote2 {
+		@extend .icon5;
+		content: ")";
+		}
+
+	@mixin paper1 {
+		@extend .icon5;
+		content: "*";
+		}
+
+	@mixin paper2 {
+		@extend .icon5;
+		content: "+";
+		}
+
+	@mixin link1 {
+		@extend .icon5;
+		content: ",";
+		}
+
+	@mixin link2 {
+		@extend .icon5;
+		content: "-";
+		}
+
+	@mixin link3 {
+		@extend .icon5;
+		content: ".";
+		}
+
+	@mixin link4 {
+		@extend .icon5;
+		content: "/";
+		}
+
+	@mixin link5 {
+		@extend .icon5;
+		content: "0";
+		}
+
+	@mixin speechbubble2 {
+		@extend .icon5;
+		content: "1";
+		}
+
+	@mixin speechbubble3 {
+		@extend .icon5;
+		content: "2";
+		}
+
+	@mixin speechbubble4 {
+		@extend .icon5;
+		content: "3";
+		}
+
+	@mixin speechbubble5 {
+		@extend .icon5;
+		content: "4";
+		}
+
+	@mixin speechbubble6 {
+		@extend .icon5;
+		content: "5";
+		}
+
+	@mixin speechbubble7 {
+		@extend .icon5;
+		content: "6";
+		}
+
+	@mixin speechbubble8 {
+		@extend .icon5;
+		content: "7";
+		}
+
+	@mixin bookmark1 {
+		@extend .icon5;
+		content: "8";
+		}
+
+	@mixin bookmark2 {
+		@extend .icon5;
+		content: "9";
+		}
+
+	@mixin openBook2 {
+		@extend .icon5;
+		content: ":";
+		}
+
+	@mixin bookmark3 {
+		@extend .icon5;
+		content: ";";
+		}
+
+	@mixin tabs {
+		@extend .icon5;
+		content: "<";
+		}
+
+	@mixin users1 {
+		@extend .icon5;
+		content: "=";
+		}
+
+	@mixin users2 {
+		@extend .icon5;
+		content: ">";
+		}
+
+	@mixin users3 {
+		@extend .icon5;
+		content: "?";
+		}
+
+	@mixin users4 {
+		@extend .icon5;
+		content: "@";
+		}		
+	
+	@mixin users5 {
+		@extend .icon5;
+		content: "A";
+		}		
+
+	@mixin usersAdd {
+		@extend .icon5;
+		content: "B";
+		}		
+
+	@mixin usersRemove {
+		@extend .icon5;
+		content: "C";
+		}		
+
+	@mixin users6 {
+		@extend .icon5;
+		content: "D";
+		}		
+
+	@mixin users7 {
+		@extend .icon5;
+		content: "E";
+		}		
+
+	@mixin userProfile1 {
+		@extend .icon5;
+		content: "F";
+		}		
+
+	@mixin userProfile2 {
+		@extend .icon5;
+		content: "G";
+		}		
+
+	@mixin userProfile3 {
+		@extend .icon5;
+		content: "H";
+		}		
+
+	@mixin atEmail {
+		@extend .icon5;
+		content: "I";
+		}		
+		
+	@mixin display9 {
+		@extend .icon5;
+		content: "J";
+		}				
+		
+	@mixin pictureFrame2 {
+		@extend .icon5;
+		content: "K";
+		}				
+		
+	@mixin pictureFrame3 {
+		@extend .icon5;
+		content: "L";
+		}				
+		
+	@mixin frames1 {
+		@extend .icon5;
+		content: "M";
+		}			
+		
+	@mixin frames2 {
+		@extend .icon5;
+		content: "N";
+		}				
+		
+	@mixin gear3 {
+		@extend .icon5;
+		content: "O";
+		}				
+
+	@mixin gear4 {
+		@extend .icon5;
+		content: "P";
+		}				
+
+	@mixin gear5 {
+		@extend .icon5;
+		content: "Q";
+		}				
+		
+	@mixin gear6 {
+		@extend .icon5;
+		content: "R";
+		}				
+				
+	@mixin gear7 {
+		@extend .icon5;
+		content: "S";
+		}				
+				
+	@mixin gear8 {
+		@extend .icon5;
+		content: "T";
+		}				
+				
+	@mixin equalizer1 {
+		@extend .icon5;
+		content: "U";
+		}				
+				
+	@mixin equalizer2 {
+		@extend .icon5;
+		content: "V";
+		}				
+				
+	@mixin lightswitch {
+		@extend .icon5;
+		content: "W";
+		}				
+				
+	@mixin circle {
+		@extend .icon5;
+		content: "X";
+		}				
+				
+	@mixin bargraph2 {
+		@extend .icon5;
+		content: "Y";
+		}				
+				
+	@mixin bargraph3 {
+		@extend .icon5;
+		content: "Z";
+		}				
+				
+	@mixin linegraph3 {
+		@extend .icon5;
+		content: "[";
+		}				
+				
+	@mixin layout1 {
+		@extend .icon5;
+		content: '&#92;';
+		}				
+						
+	@mixin layout2 {
+		@extend .icon5;
+		content: "]";
+		}				
+
+	@mixin bulletlist {
+		@extend .icon5;
+		content: "^";
+		}				
+
+	@mixin piechart {
+		@extend .icon5;
+		content: "_";
+		}				
+
+	@mixin windows1 {
+		@extend .icon5;
+		content: "`";
+		}				
+				
+	@mixin windows2 {
+		@extend .icon5;
+		content: "a";
+		}				
+		
+	@mixin molecule1 {
+		@extend .icon5;
+		content: "b";
+		}				
+
+	@mixin molecule2 {
+		@extend .icon5;
+		content: "c";
+		}				
+		
+	@mixin headphones {
+		@extend .icon5;
+		content: "d";
+		}				
+
+	@mixin mic {
+		@extend .icon5;
+		content: "e";
+		}				
+
+	@mixin transmit1 {
+		@extend .icon5;
+		content: "f";
+		}				
+		
+	@mixin transmit2 {
+		@extend .icon5;
+		content: "g";
+		}				
+		
+	@mixin lightbulb {
+		@extend .icon5;
+		content: "h";
+		}				
+		
+	@mixin outlet {
+		@extend .icon5;
+		content: "i";
+		}				
+		
+	@mixin powerbutton {
+		@extend .icon5;
+		content: "j";
+		}				
+				
+	@mixin inbox7 {
+		@extend .icon5;
+		content: "k";
+		}				
+				
+	@mixin outbox3 {
+		@extend .icon5;
+		content: "l";
+		}				
+				
+	@mixin compass3 {
+		@extend .icon5;
+		content: "m";
+		}				
+		
+	@mixin molecule3 {
+		@extend .icon5;
+		content: "n";
+		}				
+						
+	@mixin contacts {
+		@extend .icon5;
+		content: "o";
+		}				
+				
+	@mixin notepad3 {
+		@extend .icon5;
+		content: "p";
+		}				
+				
+	@mixin creditcard1 {
+		@extend .icon5;
+		content: "q";
+		}				
+				
+	@mixin creditcard2 {
+		@extend .icon5;
+		content: "r";
+		}				
+				
+	@mixin suitcase2 {
+		@extend .icon5;
+		content: "s";
+		}				
+				
+	@mixin suitcase3 {
+		@extend .icon5;
+		content: "t";
+		}				
+		
+	@mixin tube {
+		@extend .icon5;
+		content: "u";
+		}				
+				
+	@mixin cart1 {
+		@extend .icon5;
+		content: "v";
+		}				
+				
+	@mixin cart2 {
+		@extend .icon5;
+		content: "w";
+		}				
+				
+	@mixin code1 {
+		@extend .icon5;
+		content: "x";
+		}				
+				
+	@mixin code2 {
+		@extend .icon5;
+		content: "y";
+		}				
+				
+	@mixin search5 {
+		@extend .icon5;
+		content: "z";
+		}				
+				
+	@mixin flame {
+		@extend .icon5;
+		content: "{";
+		}				
+
+	@mixin flag2 {
+		@extend .icon5;
+		content: "|";
+		}				
+					
+	@mixin magicwand {
+		@extend .icon5;
+		content: "}";
+		}				
+
+	@mixin close6 {
+		@extend .icon5;
+		content: "~";
+		}	
+
+
+// Set 6 
+				
+	@mixin disc {
+		@extend .icon6;
+		content: "!";
+		}
+		
+	@mixin cube2 {
+		@extend .icon6;
+		content: '"';
+		}
+	
+	@mixin database {
+		@extend .icon6;
+		content: "#";
+		}	
+
+	@mixin server1 {
+		@extend .icon6;
+		content: "$";
+		}
+	
+	@mixin server2 {
+		@extend .icon6;
+		content: "%";
+		}
+	
+	@mixin cell1 {
+		@extend .icon6;
+		content: "&";
+		}
+	
+	@mixin cell2 {
+		@extend .icon6;
+		content: "'";
+		}
+
+	@mixin cell3 {
+		@extend .icon6;
+		content: "(";
+		}
+
+	@mixin testtube {
+		@extend .icon6;
+		content: ")";
+		}
+
+	@mixin mouse {
+		@extend .icon6;
+		content: "*";
+		}
+
+	@mixin bug {
+		@extend .icon6;
+		content: "+";
+		}
+
+	@mixin textsize {
+		@extend .icon6;
+		content: ",";
+		}
+
+	@mixin forrst {
+		@extend .icon6;
+		content: "-";
+		}
+
+	@mixin tumblr {
+		@extend .icon6;
+		content: ".";
+		}
+
+	@mixin twitter4 {
+		@extend .icon6;
+		content: "/";
+		}
+
+	@mixin flickr {
+		@extend .icon6;
+		content: "0";
+		}
+

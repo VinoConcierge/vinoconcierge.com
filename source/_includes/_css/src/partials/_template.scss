@@ -1,0 +1,197 @@
+// import base file
+
+	@import "base/base-main";
+
+// include grid-coordinates
+
+	@include grid-coordinates;
+
+// Prepare HTML5 elements for block level styling
+	
+	article, aside, details, figcaption, 
+	figure, footer, header, hgroup, 
+	menu, nav, section { 
+		display: block; 
+		padding: 0;
+		margin: 0;
+		}
+
+// global template styles and structure 
+	
+	body {
+		background: $Pattern #ececec;
+		}
+
+
+	// default @extend'd class for page wrapped elements	
+	.wrapped {
+		width: 980px;
+		margin: 0 auto; 
+		position: relative;
+		}
+
+	// main page wrapper
+	#contentWrapper {
+		@include box-shadow(rgba(0,0,0,.2), 0, 2px, 4px, inset);
+		border-top: 1px solid #d6d7db;
+		}
+				
+	// container styles: shadow, border radius, margin bottom gutter, top 1px highlight
+	.container {
+		@extend .wrapped;
+		@extend .grid-container;
+		@include ContainerStyling();  
+		background-color: #f5f5f5;
+		margin-bottom: 15px;
+		padding: 0;
+		z-index: 500;
+		// no bg gradient
+		&.plain {
+			background-image: none;
+			}
+		&.reverse {
+			@include linear-gradient($ReverseContainerGradient);
+			}
+			
+		// heroshot silo header, menu and message container
+		&.hero {
+			@extend .wrapped;
+			background: #f5f5f5;
+			overflow: visible;		
+			padding: 0;
+			margin-bottom: 15px;
+			min-height: 200px;
+			
+			// .message gets the unique hero id and bg heroshot image + messaging					
+			.message {
+				@extend .wrapped;
+				@include border-radius(4px);		
+				}				
+			hr {
+				height: 0;
+				clear: both;
+				position: relative;
+				border: none;
+				border-top: 1px solid #d6d6d6;
+				border-bottom: 1px solid #f5f5f5;
+				margin: 0;
+				width: 980px;
+				}
+			}				
+		} // end container
+
+	// aka subhero boxes, these can be used with li's or class box anywhere on the page
+	.featurettes {
+		@include FullWidth;
+		@extend .grid-container;
+		padding: 0;
+		
+		.box {
+			@include SmallSize;
+			border-left: 1px solid #ccc;
+			padding: 5px 12px 5px;
+			margin: 0 !important;			
+			@include background-clip;
+			height: 100%;
+			overflow: hidden;
+			
+			&:first-child {
+				border-left: none;
+				}		
+			& > :first-child {
+				@extend h4;
+				}		
+			}
+	
+			&.two {
+				.box {
+					@extend .grid-6;
+					}
+				}
+			&.three {
+				.box {
+					@extend .grid-4;
+					}
+				}
+			&.four {
+				.box {
+					@extend .grid-3;
+				}
+			}
+			
+		li {
+			@extend .box;
+			}
+		} // end featurettes
+	
+	article {
+		display: inline;
+		float: left;
+		max-width: 955px;
+		padding: 15px 0 15px 25px;
+		position: relative;
+		
+		> :first-child {
+			margin-left: 0;
+			}
+		> :first-child + div {
+			margin-left: 0;
+			}
+		> div:nth-of-type(1) {
+			margin-left: 0;
+			}
+			
+		> :last-child {
+			margin-right: 0;
+			}
+		> div:nth-last-of-type(1) {
+			margin-right: 0;
+			}
+		
+		hr {
+			height: 0;
+			clear: both;
+			position: relative;
+			border: none;
+			border-top: 1px solid #d6d6d6;
+			border-bottom: 1px solid #f5f5f5;
+			background: transparent;
+			margin: 25px 0;
+			width: 980px;
+			left: -25px;
+			}
+		} // end article
+			
+	aside {
+		@extend .grid-4;
+		@include MenuStyling;
+		@include clearfix;
+		position: relative;
+		margin: 0;
+		&.leftCol {
+			@include border-radius(6px 0 0 6px);
+			@include box-shadow(rgba(0,0,0,.8), -5px, 2px, 10px, inset);
+			float: left;
+			border-right: 1px solid white;
+			}	
+		&.rightCol {
+			@include border-radius(0 6px 6px 0);
+			@include box-shadow(rgba(0,0,0,.8), 5px, 2px, 10px, inset);
+			float: right;
+			border-left: 1px solid white;
+			}
+		}
+
+		
+	strong { 
+		font-weight: bold;
+		}
+
+	.imr {
+		display: none;
+		}
+	
+
+	
+	
+	

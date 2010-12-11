@@ -1,0 +1,160 @@
+
+
+// pricing box callouts -- TODO: needs cleanup
+	
+	.pricing {
+		@extend .grid-container;
+		margin-bottom: 15px;
+		border: none;
+		@include clearfix;
+	
+				.planWrap {
+					@extend .grid-4;
+					
+					.innerContent {
+						display: block;
+							p {
+								padding-right: 0;
+								}	
+							.button.green.large {
+								font-size: 20px;
+							}
+						}
+
+				.planName {
+					border: 1px solid #111;
+					border-right: none;
+					border-bottom: none;
+					padding: 1px 0 0 1px;
+					background-color: #595959;
+					height: 40px; 
+									
+					.innerContent {
+						@include linear-gradient($PricingHeaderGradient);
+						}
+					}
+
+				.planPrice {
+					border-left: 1px solid #105992;
+					border-bottom: 1px solid #042d51;
+					border-top: none;
+					border-right: none;
+					padding: 1px 0 0 1px;
+					background-color: #3987ad;
+					height: 60px; 
+									
+					.innerContent {
+						@include linear-gradient($PricingPriceGradient);
+						}		
+					}
+				
+				.planDetails {
+					border-left: 1px solid #bbb;
+					border-bottom: none;
+					border-top: none;
+					border-right: none;
+					padding: 1px 0 0 1px;
+					background-color: #f5f5f5;
+					height: 240px; 
+									
+					.innerContent {
+						@include linear-gradient($ContainerGradient);
+						padding: 0 40px;
+						}		
+											
+					}											
+				
+				}
+				
+				> .planWrap:first-child {
+					
+					.planName {
+						@include border-radius(4px 0 0 0);
+						.innerContent {
+							@include border-radius(2px 0 0 0);
+							}
+						}
+						
+					.planPrice { 
+						@include border-radius(0);
+						}
+						
+					.planDetails {
+						@include border-radius(0 0 0 4px);
+						.innerContent {
+							@include border-radius(0 0 0 2px);
+							}
+							
+						}
+						
+					}
+					
+				> .planWrap:last-child {
+					
+					.planName {
+						@include border-radius(0 4px 0 0);
+						border-right: 1px solid #111;
+						.innerContent {
+							@include border-radius(0 2px 0 0);
+							}
+							
+						}
+					.planPrice { 
+						
+						@include border-radius(0);
+						border-right: 1px solid #105992;
+						}
+						
+					.planDetails {
+						@include border-radius(0 0 4px 0);
+						.innerContent {
+							@include border-radius(0 0 2px 0);
+							}
+							
+						}					
+						
+					}
+					
+			}
+		
+	.planName {
+		text-align: center;
+		line-height: 40px;
+		color: $LightGray;
+		font-size: 18px;
+		font-weight: bold;
+		font-family: arial;
+		text-shadow: $BlackShadow;
+		}
+	
+	.planPrice {
+		@extend .planName;
+		line-height: 60px;
+		color: white;
+		font-size: 32px;
+		}
+	
+	.planDetails {
+		@include Arial;
+		text-align: center;
+		font-size: 18px;
+		text-shadow: $WhiteShadow;
+		
+		li {
+			// text-align: left;
+			line-height: 40px;
+			border-bottom: 1px solid #dadada;		
+			border-top: 1px solid #fafafa;	
+			}
+			
+		ul > li:first-child {
+			border-top: none;
+			}
+
+		ul > li:last-child {
+			border-bottom: none;
+			margin-bottom: 10px;
+			}				
+		} 
+	
+		

@@ -1,0 +1,19 @@
+// Import all of our base files into main base file
+
+	@import "template-base";
+	@import "type-base";
+	@import "button-base";
+	@import "icon-base";
+
+
+// Progressive IE mixin declaration to help IE browsers less than IE9 look good	
+	
+	$PIE: url(_includes/PIE.htc);
+
+	@mixin pie{
+		behavior: $PIE;
+		z-index: 999;
+		}
+
+
+

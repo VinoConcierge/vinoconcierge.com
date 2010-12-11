@@ -1,0 +1,269 @@
+// import base file
+
+	@import "base/base-main";
+	
+
+// silo nav structure (formerly portalNav)
+	
+	#siloNav {
+		position: absolute;
+		left: 275px;
+		top: 0;
+		
+		li {
+			float: left;
+			height: 52px;
+			line-height: 52px;
+			position: relative;
+			z-index: 700;
+			font-size: 13px;
+			text-shadow: $LightGrayShadow;
+			&:first-child {
+				a {
+					border-left: 1px solid rgba(0,0,0,.08);
+					}
+				}
+			}
+		a {
+			@include box-shadow(rgba(255,255,255,.3), 0, 0, 0, 1px, inset);
+			border-right: 1px solid rgba(0,0,0,.08);
+			color: #565656;
+			display: block;
+			padding: 0 30px;			
+			&:hover {
+				background: rgba(0,0,0,.015);
+				}
+			}
+		
+		a:hover {
+			color: $LinkBlue;
+			}
+
+		li.active {
+
+			a {
+				color: black;
+				background: rgba(0,0,0,.08);
+				}
+			}
+		}
+
+		// triangle pointer	
+		#triangle {
+			border-color: transparent transparent #eee transparent;
+			border-style:solid;
+			border-width:10px;
+			height:0px;
+			width:0px;
+			position: absolute;
+			display: block;
+			bottom: -1px;
+			left: 43%;
+			z-index: 999;
+			}
+
+	// container for siloNav and menuToggle button
+	#siloHeader {
+		@extend .wrapped;				
+		height: 50px;
+		overflow: hidden;
+		}
+
+	// silo menu toggle buttons
+	#menuToggle {
+		position: absolute;
+   		top: 12px;
+   		left: 12px;
+		}
+	#quoteToggle {
+		position: relative;
+		top: 0;
+		left: 0;
+		}
+
+	// silo menu structure - big blue gradient mega menu
+	#menuContainer {
+		@include MenuStyling;
+		@include box-shadow(0, -2px, 20px, 0, #071426, inset);
+		overflow: hidden;
+		position: relative;
+		display: none;
+		clear: both;
+		height: 270px;
+		top: 52px;
+		margin-bottom: 52px; 
+		border-top: 1px solid #fefefe;
+		border-bottom: 1px solid black;
+		width: 1970px;
+		z-index: 998;
+		
+		hr {
+			border-top: 1px solid #091b33;
+			border-bottom: 1px solid #103b76;
+			left: 0;
+			width: 920px;
+			margin: 20px 0;
+			}
+		
+
+		
+		ul {
+			// give ul's the grid/column styling without presentation
+			&:first-child {
+				@extend .grid-3;
+				margin-left: 0;
+				}
+			&:first-child + ul {
+				@extend .grid-3;
+				}
+			li {
+				&:first-child {
+					border-left: none;
+					font-size: 16px;
+					@include Arial;
+					font-weight: bold;	
+					color: white;		
+					text-shadow: $BlackShadow;	
+					span {
+						color: #1c58a6 !important;	
+						font-weight: normal;
+						}
+					}				
+		 		&:first-child a {
+					@extend li:first-child;
+					}
+		 		&:last-child {
+					border-right: none;
+					}
+				}
+			a {
+				@include MediumSize;
+				@include Lucida;
+				text-shadow: $BlackShadow;	
+				color: #dedede;
+				position: relative;
+				border-bottom: 1px solid transparent;
+				&:hover {
+					text-decoration: none;
+					color: white;
+					border-bottom: 1px dotted #8a8a8a;
+					}
+				}						
+			}
+
+		.button:after {
+			content: "";
+			}
+		
+		ul.moreResources {
+			li {
+				float: left;
+				line-height: 30px;
+				height: 30px;
+				text-align: center;
+				padding: 0 35px;
+				border-right: 1px solid #091b33;
+				border-left: 1px solid #103b76;		
+				margin: 0;		
+				a {
+					display: block;
+			  		}
+				}
+			> li:first-child {
+				color: white;
+				padding-left: 0;
+				border: none;
+				}
+			> li:first-child + li {
+				border-left: none;
+				}
+			> li:last-child {
+				border-right: none;
+			}
+
+		}
+		
+		form {
+			@include clearfix;
+			position: relative;
+			fieldset {
+				@extend .grid-3;
+				
+				&:first-child + fieldset {
+					margin-right: 0;
+					padding-top: 31px;
+					position: relative;
+					left: -10px;
+					textarea {
+						margin-bottom: 5px;
+						}
+					}
+				&:first-child textarea {
+					width: 215px;
+					height: 102px;
+					margin-top: 32px;
+					}	
+				}
+			legend {
+				@include LargeSize;
+				@include Arial;
+				line-height: 30px;
+				font-weight: bold;
+				color: white;
+				position: absolute;
+				}
+			textarea {
+				@include Lucida;
+				color: #666;
+				font-size: 12px;
+				padding: 10px 10px 0;
+				background: #f3f3f3;
+				@include box-shadow(rgba(0,0,0,.4), 0, 2px, 2px, 0, inset);
+				@include border-radius(6px);
+				border: none;
+				border-bottom: 1px solid #aad2fa;
+				width: 190px;
+				height: 20px;
+				position: relative;
+				}
+					
+			.button {
+				width: 178px;
+				position: relative;
+				top: 5px;
+				}
+			}
+		}
+	
+	#siloMenu {
+		@extend .grid-container;
+		padding: 25px 0 25px 25px;
+		position: absolute;
+		display: inline;
+		float: left;
+		}
+	#quoteMenu {
+		@extend #siloMenu;
+		}
+
+
+// #relax heroshot image and messaging
+
+	.message#relax {
+		height: 340px;
+		background: url("../../../_images/hero_relax-2010.jpg") transparent;
+		
+		// guy's elbow hanging outside of container
+		img { 
+			position: absolute; 
+			right: -12px;
+			bottom: 0;
+			}
+		.button {
+  			position: absolute;
+  			bottom: 36px;
+  			left: 37px;
+  			margin: 0;
+			}
+		}
+					

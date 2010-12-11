@@ -1,0 +1,140 @@
+
+// Border-radius fix for webkit background clipping
+@mixin border-radius($radius: $default-border-radius, $vertical-radius: false) {
+
+  @if $vertical-radius {
+    // Webkit doesn't understand the official shorthand syntax for specifying
+    // a vertical radius unless so in case there's several we only take the first.
+    @include experimental(border-radius, first-value-of($radius) first-value-of($vertical-radius),
+      not -moz,
+      -webkit,
+      not -o,
+      not -ms,
+      not -khtml,
+      not official
+    );
+    @include experimental("border-radius", $radius unquote("/") $vertical-radius,
+      -moz,
+      not -webkit,
+      -o,
+      -ms,
+      -khtml,
+      official
+    );
+	-webkit-background-clip: padding-box;
+  }
+  @else {
+    @include experimental(border-radius, $radius);
+	-webkit-background-clip: padding-box;
+  }
+}
+
+
+
+
+// Gradient mixin definition modded include PIE behavior for IE
+
+	@mixin linear-gradient($color-stops, $start: top, $image: false) {
+	  // Firefox's gradient api is nice.
+	  // Webkit's gradient api sucks -- hence these backflips:
+	    $background: unquote("");
+  	    @if $image {
+	    	$background: $image + unquote(", "); 
+			}
+	  	$start: unquote($start);
+	  	$end: bottom;
+	    @if $experimental-support-for-microsoft {
+	        -pie-background: #{$background}linear-gradient($start, $color-stops);
+	        @include pie; 
+	    	}
+	   @if $experimental-support-for-webkit {
+	       background-image: #{$background}-webkit-gradient(linear, grad-point($start), grad-point($end), grad-color-stops($color-stops));
+	   		}
+	   @if $experimental-support-for-mozilla {
+	    	background-image: #{$background}-moz-linear-gradient($start, $color-stops); 
+    		}
+	   background-image: linear-gradient($start, $color-stops); 
+	   }
+
+
+// global gradient variables - contentboxes, priceboxes, callout bars, buttons, midnight menu
+	
+		$BgGradient: color-stops(#d6d7db, #b2b9c1);
+		$CharcoalGradient: color-stops(#3a3a3c, #222224);
+		$NavMainGradient: color-stops(#3c3c3f,#171717);
+		$NavMainHoverGradient: color-stops(lighten(#3c3c3f, 4%), lighten(#171717, 2%));
+		$NavMainActiveGradient: color-stops(#222224, #313133);
+		
+		$FpwebBlueGradient: color-stops(#019ae7, #056bcd 50%);
+		$FpwebBlueGradientHover: color-stops(lighten(#019ae7, 6%), lighten(#056bcd, 2%) 50%);
+		
+		$ContainerGradient: color-stops(#e0e0e0, #f5f5f5);
+		$ReverseContainerGradient: color-stops(#fafafa, #e0e0e0);
+		$MidnightGradient: color-stops(#071426, #0f2f59);
+
+
+// global colors
+
+		$LinkBlue: 	  #4183C4;
+		$LinkHotBlue: #0099ff;
+		$LightGray: #dadada;
+		$Gray: #aaa;
+		
+
+// Noise mixins and variables
+
+		$ContainerRadius: 6px;
+		$Pattern: url("../../../_images/pattern.png");
+		$Noise: url("../../../_images/noise.png");
+		$NoiseMedium: url("../../../_images/noise-medium.png");
+		$NoiseDark: url("../../../_images/noise-dark.png");
+			
+	@mixin Noise() {
+	  	background: $Noise;
+  		}
+	
+  	@mixin NoiseMedium {
+  		background: $NoiseMedium;
+  		}		
+  		
+  	@mixin NoiseDark {
+  		background: $NoiseDark;
+  		}
+  			
+	@mixin FullWidth {
+		width: 980px;
+		}
+	
+	$FullWidth: 980px;
+
+// multi box shadow mixin
+
+	@mixin multi-shadow($shadow-1, $shadow-2: false) {
+  		$full: $shadow-1 + "," + $shadow-2;
+  		-moz-box-shadow: $full;
+  		-webkit-box-shadow: $full;
+  		-o-box-shadow: $full;
+  		box-shadow: $full;
+		}
+		
+
+// container, menu, box styling
+
+	@mixin ContainerStyling() {
+		@include box-shadow(rgba(0,0,0,.1), 0, -1px, 6px);
+		@include border-radius($ContainerRadius);
+		border: 1px solid #C1C4D3;
+		}
+			
+	@mixin MenuStyling() {
+		@include linear-gradient($MidnightGradient, top, $NoiseDark);
+		}
+	
+	@mixin ContentBoxStyling() {
+		@include border-radius($ContainerRadius);
+		@include box-shadow(rgba(0,0,0,.3), 0, 1px, 2px, inset);
+		background: $Noise repeat #ddd;
+		}
+		
+  	
+	

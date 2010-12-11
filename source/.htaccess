@@ -1,0 +1,11 @@
+
+AddHandler php5-script .php
+
+
+Options +FollowSymLinks 
+RewriteEngine on
+RewriteCond %{HTTP_HOST} .
+RewriteCond %{HTTP_HOST} !^vinoconcierge\.com
+RewriteRule (.*) http://vinoconcierge.com/$1 [R=301,L]
+
+Redirect 302 /index.html http://vinoconcierge.com/coming-soon/

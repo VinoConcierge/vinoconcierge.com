@@ -1,0 +1,67 @@
+
+// global typography font stack mixins
+
+	@mixin Lucida {
+		font-family: "lucida sans unicode", "lucida grande", Arial, Helvetica, sans-serif;
+		}
+
+	@mixin Arial {
+		font-family: Arial, Helvetica, sans-serif; 
+		}
+
+	@mixin GothamBook {
+		font-family: "GothamWebBook", Arial, Helvetica, sans-serif;
+		}
+
+	@mixin Gotham {
+		font-family: "GothamWeb", Arial, Helvetica, sans-serif; 
+		}
+
+	@mixin MyriadRegular {
+		font-family: "MyriadWebRegular", Arial, Helvetica, sans-serif;
+		}
+
+	@mixin MyriadSemiBold {
+		font-family: "MyriadWebSemibold", Arial, Helvetica, sans-serif;
+		}
+
+	@mixin MyriadBold {
+		font-family: "MyriadWebBold", Arial, Helvetica, sans-serif;
+		}
+
+// global typography font size mixins
+
+	@mixin SmallSize {
+		font-size: 11px;
+		line-height: 18px;
+		}
+
+	@mixin NormalSize {
+		font-size: 13px;
+		line-height: 21px;
+		}
+
+	@mixin MediumSize {
+		font-size: 14px;
+		line-height: 30px
+		}
+
+	@mixin LargeSize {
+		font-size: 16px;
+		line-height: 34px;
+		}
+
+// global text shadow variables
+
+	$WhiteShadow: 0 1px rgba(255,255,255,1);
+	$LightGrayShadow: 0 1px rgba(255,255,255,.3);
+	$DarkGrayShadow: 0 1px rgba(0,0,0,.5);
+	$BlackShadow: 0 1px rgba(0,0,0,1);
+	
+	$ReverseWhiteShadow: 0 -1px rgba(255,255,255,1);
+	$ReverseLightGrayShadow: 0 -1px rgba(255,255,255,.3);
+	$ReverseDarkGrayShadow: 0 -1px rgba(0,0,0,.5);
+	$ReverseBlackShadow: 0 -1px 1px rgba(0,0,0,1);	
+
+
+
