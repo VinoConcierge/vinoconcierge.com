@@ -1,0 +1,8 @@
+# robots.txt file for vinoconcierge.com
+# send e-mail to aaron@vinoconcierge.com for problems 
+# last updated on 12-11-10 at 1:49 pm CSDT
+User-agent: *
+#Disallow: *
+Disallow: /a/
+Disallow: /_includes/
+Disallow: /images/
