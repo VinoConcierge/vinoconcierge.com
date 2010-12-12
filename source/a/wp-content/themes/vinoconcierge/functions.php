@@ -20,6 +20,7 @@ function rok_theme_setup() {
 			
 			register_nav_menus( array(
 				'top_nav' => _r('Top Navigation'),
+				'footer_nav' => _r('Footer'),
 			) );
 			
 			// Get our wp_nav_menu() fallback, wp_page_menu(), to show a home link.
