@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <dwsync>
-<file name="favicon.ico" server="ftp.s113010.gridserver.com//domains/vinoconcierge.com/html/" local="129358053600000000" remote="129358053600000000" />
 <file name="index.php" server="ftp.s113010.gridserver.com//domains/vinoconcierge.com/html/" local="129365901000000000" remote="129365901000000000" />
 <file name="license.txt" server="ftp.s113010.gridserver.com//domains/vinoconcierge.com/html/" local="129365901000000000" remote="129365901000000000" />
 <file name="readme.html" server="ftp.s113010.gridserver.com//domains/vinoconcierge.com/html/" local="129365901000000000" remote="129365901000000000" />
@@ -27,4 +26,5 @@
 <file name="wp-signup.php" server="ftp.s113010.gridserver.com//domains/vinoconcierge.com/html/" local="129365901000000000" remote="129365901000000000" />
 <file name="wp-trackback.php" server="ftp.s113010.gridserver.com//domains/vinoconcierge.com/html/" local="129365901000000000" remote="129365901000000000" />
 <file name="xmlrpc.php" server="ftp.s113010.gridserver.com//domains/vinoconcierge.com/html/" local="129365901000000000" remote="129365901000000000" />
+<file name=".htaccess" server="ftp.s113010.gridserver.com//domains/vinoconcierge.com/html/" local="129366106800000000" remote="129366106800000000" />
 </dwsync>

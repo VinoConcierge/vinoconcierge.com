@@ -65,7 +65,7 @@
 <body>
 <!--<div class="background"></div>-->
 <header id="mastHead">
-	<a href="<?php bloginfo('wpurl'); ?>/" rel="nofollow"><img src="<?php bloginfo('template_directory'); ?>/_images/navMain-logo.png" alt="<?php bloginfo('description'); ?>" /></a>
+	<a style="float: left; position: relative; left: 10px;" href="<?php bloginfo('wpurl'); ?>/" rel="nofollow"><img src="<?php bloginfo('template_directory'); ?>/_images/navMain-logo.png" alt="<?php bloginfo('description'); ?>" /></a>
   <?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('Top') ) : ?>
   <div class="module">
     <div class="module-body">
@@ -117,7 +117,9 @@
 
 <div id="contentWrapper">
 	<header id="siloHeader">
-  <?php
+  
+		<?php if( is_home() ){ ?><h1><?php } else { ?><p class="h1"><strong><?php } ?>
+			<?php
 				if($post->post_parent) {
 					$parentID = $post->post_parent;
 					$children = '<a rel="nofollow" href="'.get_permalink($parentID).'">'.get_the_title($parentID).'</a>';
@@ -125,7 +127,6 @@
 					$children = the_title();
 				}
 			?> 
-		<?php if( is_home() ){ ?><h1><?php } else { ?><p class="h1"><strong><?php } ?>
 			<?php if ($children) { ?>
 				<?php echo $children; ?>
 			<?php } ?>
