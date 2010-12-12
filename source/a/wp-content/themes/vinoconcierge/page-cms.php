@@ -67,15 +67,10 @@ Template Name: Page - CMS
 														<div class="article_column column1 cols1">
 															<div class="colpad">
 																<h2 class="contentheading"><?php the_title(); ?></h2>
-																<p class="iteminfo">
-																	<span class="modifydate"><?php _re('Last Updated on'); ?> <?php the_modified_date('l, j F Y h:i'); ?></span>
-																	<span class="createdby"><?php _re('Written by'); ?> <?php the_author(); ?></span>
-																	<span class="createdate"><?php the_time('l, j F Y h:i'); ?></span>
-																</p>
 																
 																<?php the_content(); ?>
 																
-																<?php edit_post_link(_r('Edit this entry.'), '', ''); ?>
+																
 																
 																<?php if(comments_open()) { ?>
 													
@@ -128,6 +123,7 @@ Template Name: Page - CMS
             		</div>
                 
                 	</article>
+                  <?php edit_post_link(_r('edit page'), '', ''); ?>
                 </section>
         		</div>
 
