@@ -65,73 +65,165 @@
 <body>
 <!--<div class="background"></div>-->
 <header id="mastHead">
-	<a style="float: left; position: relative; left: 10px;" href="<?php bloginfo('wpurl'); ?>/" rel="nofollow"><img src="<?php bloginfo('template_directory'); ?>/_images/navMain-logo.png" alt="<?php bloginfo('description'); ?>" /></a>
   <?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('Top') ) : ?>
-  <div class="module">
-    <div class="module-body">
-      <ul class="menu">
-        <?php wp_list_bookmarks('title_li=&categorize=0&category_name=blogroll&title_before=<span>&title_after=</span>&limit=6'); ?>
-      </ul>
-    </div>
-  </div>
+	<!-- Widget -->
+  
+  <!-- /Widget -->
   <?php endif; ?>
-  <nav id="navMain">
-    <?php if(function_exists('wp_nav_menu')) {?>
-
-      <!--<li id="logo"><a href="<?php /*?><?php bloginfo('wpurl'); ?><?php */?>/" rel="nofollow"><img src="_images/navMain-logo.png" alt="<?php /*?><?php bloginfo('description'); ?><?php */?>" /></a></li>-->
-      <?php 
-      $my_pages = wp_nav_menu( array('menu' => 'Top Navigation', 'container' => '', 'echo' => '0', 'fallback_cb' => 'rok_old_menu', 'link_before' => '<span>', 'link_after' => '</span>' ));
-      
-      $lines = explode("\n", $my_pages);
+	<div id="navWrapper">
+  	<a id="mastLogo" href="<?php bloginfo('wpurl'); ?>/" rel="nofollow"><img src="<?php bloginfo('template_directory'); ?>/_images/navMain-logo.png" width="195" height="98" alt="<?php bloginfo('description'); ?>" /></a>
+    <nav id="navMain">
+      <?php if(function_exists('wp_nav_menu')) {?>
   
-      $output = "";
-      foreach($lines as $line) {
-        $line = trim($line);
-        if (substr($line, 0, 4) == "<li ") {
-  
-          if (substr($line, -5, 5) != "</li>") {
-            preg_match("#class=(?<!\\\)\"(.*)(?<!\\\)\"#U", $line, $klass);
-            if (count($klass)) {
-              $klass = $klass[0];
-              $new_klass = substr($klass, 0, -1);
-              $line = str_replace($klass, $new_klass.' parent"', $line);
+        <!--<li id="logo"><a href="<?php /*?><?php bloginfo('wpurl'); ?><?php */?>/" rel="nofollow"><img src="_images/navMain-logo.png" alt="<?php /*?><?php bloginfo('description'); ?><?php */?>" /></a></li>-->
+        <?php 
+        $my_pages = wp_nav_menu( array('menu' => 'Top Navigation', 'container' => '', 'echo' => '0', 'fallback_cb' => 'rok_old_menu' ));
+        
+        $lines = explode("\n", $my_pages);
+    
+        $output = "";
+        foreach($lines as $line) {
+          $line = trim($line);
+          if (substr($line, 0, 4) == "<li ") {
+    
+            if (substr($line, -5, 5) != "</li>") {
+              preg_match("#class=(?<!\\\)\"(.*)(?<!\\\)\"#U", $line, $klass);
+              if (count($klass)) {
+                $klass = $klass[0];
+                $new_klass = substr($klass, 0, -1);
+                $line = str_replace($klass, $new_klass.' parent"', $line);
+              }
             }
           }
+    
+          $output .= $line."\n";
         }
-  
-        $output .= $line."\n";
-      }
-      
-      if(substr($output, -7, 7) == "</div>\n") $output = substr_replace($output, '', -7);
-      
-      echo $output;
-      
-      } else {
-      
-      rok_old_menu();
-      ?>
-      
-    <?php } ?><!-- /IF wp_nav_menu -->
-  </nav>
+        
+        if(substr($output, -7, 7) == "</div>\n") $output = substr_replace($output, '', -7);
+        
+        echo $output;
+        
+        } else {
+        
+        rok_old_menu();
+        ?>
+        
+      <?php } ?><!-- /IF wp_nav_menu -->
+    </nav>
+  </div>
 </header>  
-
 <div id="contentWrapper">
 	<header id="siloHeader">
-  
-		<?php if( is_home() ){ ?><h1><?php } else { ?><p class="h1"><strong><?php } ?>
-			<?php
-				if($post->post_parent) {
+  	<?php 
+			// SET SOME GLOBAL PARAMETER VARS
+			global $wp_query;
+			global $post;
+			global $h1TagOpen;
+			global $h1TagClose;
+			global $h1Type;		// semantic (actual <h1>) or presentation (<p class='h1'>)
+			global $h1Text;
+			global $pageType;
+
+			// determine the type of page it is
+			if( is_home() ) {
+				$pageType = 'home';	
+				$h1Type = 'presentation';
+			} elseif ( is_search() ) {
+				$pageType = 'search';
+				$h1Type = 'semantic';
+			} elseif ( is_page() ) {
+				if ( $post->post_parent ) {		// test to see if the page has a parent
+					$pageType = 'subpage';
+					$h1Type = 'presentation';		// we don't want the parent page to be the h1
 					$parentID = $post->post_parent;
-					$children = '<a rel="nofollow" href="'.get_permalink($parentID).'">'.get_the_title($parentID).'</a>';
 				} else {
-					$children = the_title();
+					$pageType = 'page';
+					$h1Type = 'semantic';
 				}
-			?> 
-			<?php if ($children) { ?>
-				<?php echo $children; ?>
-			<?php } ?>
-			<?php if( is_home() ){ ?></h1><?php } else { ?></strong></p><?php } ?>
+			} elseif ( is_archive() ) {
+				$h1Type = 'semantic';
+				if( is_category() ) {
+					$pageType = 'catArchive';
+				} elseif ( is_tag() ) {
+					$pageType = 'tagArchive';
+				} elseif ( is_date() ) {
+					if( is_year() ) {
+						$pageType = 'yearArchive';
+					} elseif ( is_month() ) {
+						$pageType = 'monthArchive';
+					} else {
+						$pageType = 'dateArchive';
+					}
+				} else {
+					$pageType = 'archive';
+				}
+			} elseif ( is_404() ) {
+				$pageType = '404';
+				$h1Type = 'semantic';
+			} elseif ( is_attachment() ) {
+				$pageType = 'attachment';
+				$h1Type = 'semantic';
+			}
+			
+			// now that we know the pageType, lets output the tags and text we want for each page by calling this function
+			// set up the header HTML tag wrapping
+				switch($h1Type) {
+					case 'semantic': 
+						$h1TagOpen = '<h1>';
+						$h1TagClose = '</h1>';
+						break;
+					case 'presentation':
+						$h1TagOpen = '<p class="h1">';
+						$h1TagClose = '</p>';
+						break;
+				}
+			
+			// set up the header text
+				switch($pageType) {
+					case 'home': 
+						$h1Text = 'Welcome to VinoConcierge.com';
+						break;
+					case 'search':
+						$total_results = $wp_query->found_posts;
+						$h1Text = 'Your search for "'.the_search_query().'" returned '.$total_results.' results';
+						break;
+					case 'page': 
+						$h1Text = get_the_title($post);
+						break;
+					case 'subpage': 
+						$h1Text = '<a rel="nofollow" href="'.get_permalink($parentID).'">'.get_the_title($parentID).'</a>';
+						break;
+					case 'catArchive': 
+						$h1Text = get_the_title($post).' Category Archives';
+						break;
+					case 'tagArchive': 
+						$h1Text = get_the_title($post).' Tag Archives';
+						break;
+					case 'yearArchive': 
+						$h1Text = get_the_title($post).' Archives';
+						break;
+					case 'monthArchive': 
+						$h1Text = get_the_title($post).' Archives';
+						break;
+					case 'dateArchive': 
+						$h1Text = get_the_title($post).' Archives';
+						break;
+					case 'archive': 
+						$h1Text = get_the_title($post).' Archives';
+						break;
+					case '404':
+						$h1Text = 'Page Not Found (404)';
+						break;
+					case 'attachment':
+						$h1Text = '';
+						break;
+					default:
+						$h1Text = get_the_title($post);
+				}
+		?>
+		<?php echo($h1TagOpen); ?><?php echo($h1Text); ?><?php echo($h1TagClose); ?>
     <nav id="siloNav">
+    <?php if( is_page() ) { ?>
       <?php
 				if($post->post_parent)
 				$children = wp_list_pages("title_li=&child_of=".$post->post_parent."&echo=0");
@@ -142,12 +234,12 @@
 				<?php echo $children; ?>
 				</ul>
 				<?php } ?>
-
+		<?php } ?>
 		
 		</nav>
 		<div id="menuContainer" class="closed">
 			<div id="siloMenu">
-				<ul>
+				<!--<ul>
 					<li><a href="">2010 Foundation <span>(WSS 4)</span></a></li>
 					<li><a href="">Pricing</a></li>
 					<li><a href="">Dedicated Pricing</a></li>
@@ -160,7 +252,7 @@
 					<li><a href="">Enterprise Pricing</a></li>
 					<li><a href="">What's New</a></li>
 					<li><a href="">Sign Up Today</a></li>
-				</ul>
+				</ul>-->
 				<form>				
 					<fieldset>
 						<legend class="requestInfo">Request More Information</legend>
@@ -174,14 +266,14 @@
 				</form>
 				<hr />
 				<ul class="moreResources">
-					<li>More Resources: </li>
+					<!--<li>More Resources: </li>
 					<li><a class="versus" href="">Foundation vs. Server</a></li>
 					<li><a class="features" href="">Browse All 2010 Features</a></li>
-					<li><a class="cloud" href="">Hosted vs. On-Premise</a></li>
+					<li><a class="cloud" href="">Hosted vs. On-Premise</a></li>-->
 				</ul>
 			</div>
 			<div id="quoteMenu">
-				<ul>
+				<!--<ul>
 					<li><a href="">2010 Foundation <span>(WSS 4)</a></li>
 					<li><a href="">Pricing</a></li>
 					<li><a href="">Dedicated Pricing</a></li>
@@ -194,7 +286,7 @@
 					<li><a href="">Enterprise Pricing</a></li>
 					<li><a href="">What's New</a></li>
 					<li><a href="">Sign Up Today</a></li>
-				</ul>
+				</ul>-->
 				<form>				
 					<fieldset>
 						<legend class="requestInfo">Request More Information</legend>

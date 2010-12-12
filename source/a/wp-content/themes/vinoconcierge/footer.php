@@ -5,20 +5,6 @@
         		
         			<!-- Widget -->
         		
-              <div class="module">
-                <h3 class="module-title"><?php _re('Recent Posts'); ?></h3>
-                  <div class="module-body">
-                  
-                    <!-- Widget Content -->
-                  
-                      <ul>
-                    <?php wp_get_archives('title_li=&type=postbypost&limit='.get_option('after_footer_post_count')); ?>
-                  </ul>       
-                  
-                    <!-- / Widget Content -->
-                    
-                  </div>
-              </div>
               
               <!-- / Widget -->
               
@@ -28,29 +14,7 @@
       
               <!-- Widget -->
       
-              <div class="module">
-                <h3 class="module-title"><?php _re('Popular Posts'); ?></h3>
-                  <div class="module-body">
-                  
-                    <!-- Widget Content -->
-                  
-                      <ul>
-                        <?php $result = $wpdb->get_results("SELECT comment_count,ID,post_title FROM $wpdb->posts ORDER BY comment_count DESC LIMIT 0 , ".get_option('after_footer_post_count'));
-                        foreach ($result as $post) {
-                          setup_postdata($post);
-                      $postid = $post->ID;
-                      $title = $post->post_title;
-                      $commentcount = $post->comment_count;
-                      if ($commentcount != 0) { ?>
-                        <li><a href="<?php echo get_permalink($postid); ?>" title="<?php echo $title ?>"><?php echo $title ?></a></li>
-                      <?php } } ?>
-                  </ul>
-                                        
-                      <!-- / Widget Content -->
-                      
-                  </div>
-              </div>
-              
+         
               <!-- / Widget -->
               
               <?php endif; ?>
@@ -59,27 +23,6 @@
               
               <!-- Widget -->
       
-              <div class="module">
-                <h3 class="module-title"><?php _re('Last Modified'); ?></h3>
-                  <div class="module-body">
-                  
-                    <!-- Widget Content -->
-                  
-                      <ul>
-                            
-                    <?php query_posts('showposts='.get_option('after_footer_post_count').'&orderby=modified&order=DESC') ?>
-                    <?php while (have_posts()) : the_post(); ?>									
-            
-                    <li><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></li>
-            
-                    <?php endwhile; ?>
-                      
-                  </ul>
-                      
-                      <!-- / Widget Content -->
-                      
-                    </div>
-              </div>
       
               <!-- / Widget -->
               
@@ -87,24 +30,64 @@
 	
 						</div> <!-- /#mainmode3 -->
 
-				<footer id="footer">
-					<div class="footer-pad">
-					
-						<?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('Bottom') ) : ?>
-					
-                		<ul class="menu">
-                		
-                			<?php wp_list_bookmarks('title_li=&categorize=0&category_name=blogroll&title_before=<span>&title_after=</span>'); ?>
-                		
-                		</ul>
-                		
-                		<?php endif; ?>
-                		
-            		</div>
-				</footer>
-
 </div> <!-- /#contentWrapper -->
+<div id="footerWrapper">
+	<footer id="footer">
+    <div class="footer-pad">
     
+      <?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('Bottom') ) : ?>
+    
+        <ul class="menu">
+        
+          <?php wp_list_bookmarks('title_li=&categorize=0&category_name=footer&title_before=<span>&title_after=</span>'); ?>
+        
+        </ul>
+        
+        <?php endif; ?>
+        
+    </div>
+    <p>&copy;<?php echo(date("Y")); ?> Vino Concierge, LLC</p>
+    <nav id="navFooter">
+    <?php if(function_exists('wp_nav_menu')) {?>
+
+      <!--<li id="logo"><a href="<?php /*?><?php bloginfo('wpurl'); ?><?php */?>/" rel="nofollow"><img src="_images/navMain-logo.png" alt="<?php /*?><?php bloginfo('description'); ?><?php */?>" /></a></li>-->
+      <?php 
+      $my_pages = wp_nav_menu( array('menu' => 'Footer', 'container' => '', 'echo' => '0', 'fallback_cb' => 'rok_old_menu' ));
+      
+      $lines = explode("\n", $my_pages);
+  
+      $output = "";
+      foreach($lines as $line) {
+        $line = trim($line);
+        if (substr($line, 0, 4) == "<li ") {
+  
+          if (substr($line, -5, 5) != "</li>") {
+            preg_match("#class=(?<!\\\)\"(.*)(?<!\\\)\"#U", $line, $klass);
+            if (count($klass)) {
+              $klass = $klass[0];
+              $new_klass = substr($klass, 0, -1);
+              $line = str_replace($klass, $new_klass.' parent"', $line);
+            }
+          }
+        }
+  
+        $output .= $line."\n";
+      }
+      
+      if(substr($output, -7, 7) == "</div>\n") $output = substr_replace($output, '', -7);
+      
+      echo $output;
+      
+      } else {
+      
+      rok_old_menu();
+      ?>
+      
+    <?php } ?><!-- /IF wp_nav_menu -->
+  </nav>
+    
+  </footer>
+</div>    
 		<?php wp_footer(); ?>
 		
     <script src="<?php bloginfo('template_directory'); ?>/_includes/_js/jquery-1.4.3.min.js"></script>

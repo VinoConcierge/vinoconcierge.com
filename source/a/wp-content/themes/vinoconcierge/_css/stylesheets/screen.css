@@ -94,10 +94,13 @@ h1, .h1
 	left:10px;
 	top:5px
 }
-h2, h3, .h2, .h3
+.container h1, .container .h1 { margin-bottom: 40px; }
+h2, h3, .h2, .h3, .container h1, .container .h1
 {
 	font-family:"MyriadWebBold", Arial, Helvetica, sans-serif;
-	font-size:32px
+	font-size:32px;
+	left: 0;
+	top: 0;
 }
 h3, .h3
 {
@@ -217,8 +220,8 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 	padding:0;
 	margin:0
 }
-body { background:url("wp-content/themes/vinoconcierge/_images/pattern.png") #ececec }
-.wrapped, .container, .container.hero, .container.hero .message, #navMain, #siloHeader
+body { background:url("/a/wp-content/themes/vinoconcierge/_images/pattern_dk.png") #cdcdcd }
+.wrapped, .container, .container.hero, .container.hero .message, #siloHeader, #footerWrapper, #footer
 {
 	width:980px;
 	margin:0 auto;
@@ -230,7 +233,32 @@ body { background:url("wp-content/themes/vinoconcierge/_images/pattern.png") #ec
 	-webkit-box-shadow:rgba(0, 0, 0, 0.2) 0 2px 4px inset;
 	-o-box-shadow:rgba(0, 0, 0, 0.2) 0 2px 4px inset;
 	box-shadow:rgba(0, 0, 0, 0.2) 0 2px 4px inset;
-	border-top:1px solid #d6d7db
+	border-top:1px solid #d6d7db;
+	border-bottom:1px solid #fafafa;
+	padding-bottom: 20px; /* need some room so we can overlap the bottom shadow */
+	background:url("/a/wp-content/themes/vinoconcierge/_images/pattern.png") #ececec
+}
+#footer { float: left; height: auto; }
+#footer p, #navFooter li { color: #e4e4e4; font-size: 11px; }
+#footer p { font-size: 11px; line-height: 40px; padding: 0; margin: 0; display: inline; }
+#navFooter { float: right; }
+#navFooter li 
+{ 
+	float: left; 
+	/*border-left:1px solid rgba(0, 0, 0, 0.05);
+	border-right:1px solid rgba(0, 0, 0, 0.05);*/
+}
+#navFooter li a 
+{ 
+	float: left;
+	color: White; 
+	padding: 10px 20px; 
+	/*border-left:1px solid rgba(255, 255, 255, 0.18);
+	border-right:1px solid rgba(255, 255, 255, 0.18);*/
+}
+#navFooter li a:hover 
+{
+	background: rgba(0, 0, 0, 0.05);
 }
 .container
 {
@@ -249,7 +277,8 @@ body { background:url("wp-content/themes/vinoconcierge/_images/pattern.png") #ec
 	background-color:#f5f5f5;
 	margin-bottom:15px;
 	padding:0;
-	z-index:500
+	z-index:500;
+	min-height: 350px;
 }
 .container.plain { background-image:none }
 .container.reverse
@@ -344,11 +373,11 @@ article hr
 }
 aside
 {
-	-pie-background:url("wp-content/themes/vinoconcierge/_images/noise-dark.png"), linear-gradient(top, #071426, #0f2f59);
+	-pie-background:url("/a/wp-content/themes/vinoconcierge/_images/noise-dark.png"), linear-gradient(top, #071426, #0f2f59);
 	behavior:url(_includes/PIE.htc);
 	z-index:999;
-	background-image:url("wp-content/themes/vinoconcierge/_images/noise-dark.png"), -webkit-gradient(linear, 0% 0%, 0% 100%, color-stop(0%, #071426), color-stop(100%, #0f2f59));
-	background-image:url("wp-content/themes/vinoconcierge/_images/noise-dark.png"), -moz-linear-gradient(top, #071426 0%, #0f2f59 100%);
+	background-image:url("/a/wp-content/themes/vinoconcierge/_images/noise-dark.png"), -webkit-gradient(linear, 0% 0%, 0% 100%, color-stop(0%, #071426), color-stop(100%, #0f2f59));
+	background-image:url("/a/wp-content/themes/vinoconcierge/_images/noise-dark.png"), -moz-linear-gradient(top, #071426 0%, #0f2f59 100%);
 	background-image:linear-gradient(top, #071426 0%, #0f2f59 100%);
 	overflow:hidden;
 *zoom:1;
@@ -404,7 +433,19 @@ strong { font-weight:bold }
 	-o-box-shadow:rgba(255, 255, 255, 0.45) 0 0 1px inset;
 	box-shadow:rgba(255, 255, 255, 0.45) 0 0 1px inset;
 	border-top:2px solid black;
-	border-bottom:1px solid black
+	border-bottom:1px solid black;
+	padding: 30px 0;
+}
+#navWrapper { width: 955px; margin: 0 auto; position: relative; }
+#mastLogo 
+{
+	display: block;
+	position: absolute;
+	left: 0;
+	top: -30px; /* negative of whatever the top #mastHead padding is */
+	cursor: pointer;
+	outline: 0 none;
+	text-decoration: none;
 }
 #navMain
 {
@@ -420,9 +461,11 @@ strong { font-weight:bold }
 	-o-box-shadow:rgba(255, 255, 255, 0.05) 0 0 0 4px, rgba(255, 255, 255, 0.1) 0 1px 0 0;
 	box-shadow:rgba(255, 255, 255, 0.05) 0 0 0 4px, rgba(255, 255, 255, 0.1) 0 1px 0 0;
 	border:1px solid black;
-	margin-bottom:55px;
 	overflow:visible;
-	top:25px
+	/*top:25px;*/
+	width: auto;
+	float: right;
+	max-width: 955px;
 }
 #navMain ul, #navMain li, #navMain a
 {
@@ -448,9 +491,10 @@ strong { font-weight:bold }
 	background-image:linear-gradient(top, #3c3c3f 0%, #171717 100%);
 	border-right:1px solid black;
 	display:block;
-	padding:0 23px
+	padding:0 34px
 }
-#navMain a:hover, #navMain a.active, #navMain a:active, #navMain a#menuToggle:active, #navMain a#quoteToggle:active
+#navMain a:hover, #navMain .current_page_item a:hover, #navMain .current_page_ancestor a:hover, #navMain a:active, #navMain a#menuToggle:active, #navMain a#quoteToggle:active, 
+#navMain .quote a:active, #navMain .current_page_item.quote a 
 {
 	-pie-background:linear-gradient(top, #464649, #1c1c1c);
 	behavior:url(_includes/PIE.htc);
@@ -459,7 +503,8 @@ strong { font-weight:bold }
 	background-image:-moz-linear-gradient(top, #464649 0%, #1c1c1c 100%);
 	background-image:linear-gradient(top, #464649 0%, #1c1c1c 100%)
 }
-#navMain a.active, #navMain a:active, #navMain a#menuToggle:active, #navMain a#quoteToggle:active
+#navMain a.active, #navMain a:active, #navMain a#menuToggle:active, #navMain a#quoteToggle:active,
+#navMain .current_page_item a, #navMain .current_page_ancestor a, #navMain .current_page_item a#menuToggle, #navMain .current_page_item a#quoteToggle
 {
 	-pie-background:linear-gradient(top, #222224, #313133);
 	behavior:url(_includes/PIE.htc);
@@ -472,7 +517,7 @@ strong { font-weight:bold }
 	-o-box-shadow:#333333 0 4px 8px 0 inset;
 	box-shadow:#333333 0 4px 8px 0 inset
 }
-#navMain a#quote
+#navMain a#quote, #navMain .quote a
 {
 	-moz-box-shadow:rgba(255, 255, 255, 0.35) 0 2px 0 -1px inset;
 	-webkit-box-shadow:rgba(255, 255, 255, 0.35) 0 2px 0 -1px inset;
@@ -485,24 +530,39 @@ strong { font-weight:bold }
 	-khtml-border-radius:0 3px 3px 0;
 	border-radius:0 3px 3px 0;
 	-webkit-background-clip:padding-box;
-	-pie-background:linear-gradient(top, #019ae7, #056bcd 50%);
-	behavior:url(_includes/PIE.htc);
-	z-index:999;
-	background-image:-webkit-gradient(linear, 0% 0%, 0% 100%, color-stop(0%, #019ae7), color-stop(100%, #056bcd));
-	background-image:-moz-linear-gradient(top, #019ae7 0%, #056bcd 50%);
-	background-image:linear-gradient(top, #019ae7 0%, #056bcd 50%);
+	z-index:999;	
 	border-right:none;
 	margin-right:-2px;
 	padding:0 23px 0 23px
+	/* BLUE */	
+	-pie-background:linear-gradient(top, #019ae7, #056bcd 50%);
+	behavior:url(_includes/PIE.htc);
+	background-image:-webkit-gradient(linear, 0% 0%, 0% 100%, color-stop(0%, #019ae7), color-stop(100%, #056bcd));
+	background-image:-moz-linear-gradient(top, #019ae7 0%, #056bcd 50%);
+	background-image:linear-gradient(top, #019ae7 0%, #056bcd 50%);
+	/* RED */
+	/*-pie-background:linear-gradient(top, #e40151, #cd052e 50%);
+	behavior:url(_includes/PIE.htc);
+	background-image:-webkit-gradient(linear, 0% 0%, 0% 100%, color-stop(0%, #e40151), color-stop(100%, #cd052e));
+	background-image:-moz-linear-gradient(top, #e40151 0%, #cd052e 50%);
+	background-image:linear-gradient(top, #e40151 0%, #cd052e 50%);*/
 }
-#navMain a#quote:hover, #navMain a#quote.active, #navMain a#quote:active
+#navMain a#quote:hover, #navMain a#quote.active, #navMain a#quote:active,
+#navMain .quote a:hover, #navMain .current_page_item.quote a
 {
+	z-index:999;
+	/* BLUE */
 	-pie-background:linear-gradient(top, #09acfe, #0570d7 50%);
 	behavior:url(_includes/PIE.htc);
-	z-index:999;
 	background-image:-webkit-gradient(linear, 0% 0%, 0% 100%, color-stop(0%, #09acfe), color-stop(100%, #0570d7));
 	background-image:-moz-linear-gradient(top, #09acfe 0%, #0570d7 50%);
 	background-image:linear-gradient(top, #09acfe 0%, #0570d7 50%)
+	/* RED */
+	/*-pie-background:linear-gradient(top, #f20f5f, #db143c 50%);
+	behavior:url(_includes/PIE.htc);
+	background-image:-webkit-gradient(linear, 0% 0%, 0% 100%, color-stop(0%, #f20f5f), color-stop(100%, #db143c));
+	background-image:-moz-linear-gradient(top, #f20f5f 0%, #db143c 50%);
+	background-image:linear-gradient(top, #f20f5f 0%, #db143c 50%)*/
 }
 #logo, #logo a
 {
@@ -536,15 +596,26 @@ strong { font-weight:bold }
 	text-decoration:none;
 	text-shadow:0 -1px 1px #000
 }
-#navMain a.active, #navMain a:active, #navMain a#menuToggle:active, #navMain a#quoteToggle:active
+#navMain a.active, #navMain a:active, #navMain a#menuToggle:active, #navMain a#quoteToggle:active,
+#navMain .current_page_item a, #navMain .current-page-ancestor a
 {
 	color:white;
-	text-shadow:0 2px 1px black
+	text-shadow:0 2px 1px black;
+	/*-pie-background:linear-gradient(top, #000000, #131313);
+	behavior:url(_includes/PIE.htc);*/
+	z-index:999;
+	/*background-image:-webkit-gradient(linear, 0% 0%, 0% 100%, color-stop(0%, #000000), color-stop(100%, #131313));
+	background-image:-moz-linear-gradient(top, #000000 0%, #131313 100%);
+	background-image:linear-gradient(top, #000000 0%, #131313 100%);*/
+	-moz-box-shadow:#1d1d1d 0 4px 8px 0 inset;
+	-webkit-box-shadow:#1d1d1d 0 4px 8px 0 inset;
+	-o-box-shadow:#1d1d1d 0 4px 8px 0 inset;
+	box-shadow:#1d1d1d 0 4px 8px 0 inset
 }
 #siloNav
 {
 	position:absolute;
-	left:275px;
+	right:12px;
 	top:0
 }
 #siloNav li
@@ -610,11 +681,11 @@ strong { font-weight:bold }
 }
 #menuContainer
 {
-	-pie-background:url("wp-content/themes/vinoconcierge/_images/noise-dark.png"), linear-gradient(top, #071426, #0f2f59);
+	-pie-background:url("/a/wp-content/themes/vinoconcierge/_images/noise-dark.png"), linear-gradient(top, #071426, #0f2f59);
 	behavior:url(_includes/PIE.htc);
 	z-index:999;
-	background-image:url("wp-content/themes/vinoconcierge/_images/noise-dark.png"), -webkit-gradient(linear, 0% 0%, 0% 100%, color-stop(0%, #071426), color-stop(100%, #0f2f59));
-	background-image:url("wp-content/themes/vinoconcierge/_images/noise-dark.png"), -moz-linear-gradient(top, #071426 0%, #0f2f59 100%);
+	background-image:url("/a/wp-content/themes/vinoconcierge/_images/noise-dark.png"), -webkit-gradient(linear, 0% 0%, 0% 100%, color-stop(0%, #071426), color-stop(100%, #0f2f59));
+	background-image:url("/a/wp-content/themes/vinoconcierge/_images/noise-dark.png"), -moz-linear-gradient(top, #071426 0%, #0f2f59 100%);
 	background-image:linear-gradient(top, #071426 0%, #0f2f59 100%);
 	-moz-box-shadow:0 -2px 20px 0 #071426 inset;
 	-webkit-box-shadow:0 -2px 20px 0 #071426 inset;
@@ -763,7 +834,7 @@ strong { font-weight:bold }
 .message#relax
 {
 	height:340px;
-	background:url("wp-content/themes/vinoconcierge/_images/hero_relax-2010.jpg") transparent
+	background:url("/a/wp-content/themes/vinoconcierge/_images/hero_relax-2010.jpg") transparent
 }
 .message#relax img
 {
@@ -907,7 +978,7 @@ strong { font-weight:bold }
 	background-image:-moz-linear-gradient(top, #da6f6f 0%, #c66d57 100%);
 	background-image:linear-gradient(top, #da6f6f 0%, #c66d57 100%)
 }
-.button.gray
+.button.gray, .post-edit-link
 {
 	-webkit-box-sizing:padding-box;
 	display:inline-block;
@@ -939,7 +1010,7 @@ strong { font-weight:bold }
 	box-shadow:rgba(0, 0, 0, 0.3) 0 1px 2px, rgba(255, 255, 255, 0.5) 0 1px 1px inset;
 	border:1px solid #595959
 }
-.button.gray:hover
+.button.gray:hover, .post-edit-link:hover
 {
 	-pie-background:linear-gradient(top, #b6b6b6, #666666);
 	behavior:url(_includes/PIE.htc);
@@ -947,6 +1018,12 @@ strong { font-weight:bold }
 	background-image:-webkit-gradient(linear, 0% 0%, 0% 100%, color-stop(0%, #b6b6b6), color-stop(100%, #666666));
 	background-image:-moz-linear-gradient(top, #b6b6b6 0%, #666666 100%);
 	background-image:linear-gradient(top, #b6b6b6 0%, #666666 100%)
+}
+.post-edit-link {
+	position: absolute;
+	top: 12px;
+	right: 12px;
+	display: none;
 }
 .button.large.blue
 {
