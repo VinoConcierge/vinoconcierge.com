@@ -1,0 +1,112 @@
+// import base file
+
+	@import "base/base-main";
+
+
+// nav main structure
+
+	#mastHead {
+		@include clearfix;
+		@include linear-gradient($CharcoalGradient);
+		@include box-shadow(rgba(255,255,255,.45), 0, 0, 1px, inset);
+		border-top: 2px solid black;
+		border-bottom: 1px solid black;
+		}  
+
+	#navMain { 
+		@extend .wrapped;
+		@include border-radius(4px);		
+		@include multi-shadow(rgba(255,255,255,.05) 0 0 0 4px, rgba(255,255,255,.1) 0 1px 0 0);	
+		border: 1px solid black;	
+		margin-bottom: 55px;
+		overflow: visible;
+		top: 25px;
+		
+		ul { 
+			height: 36px;
+			position: relative;
+		    }
+		
+		li {
+			@extend ul;
+			display: inline;
+			float: left;
+			}
+		
+		a {
+			@extend ul;
+			@include box-shadow(rgba(255,255,255,.1), 0, 2px, 0, -1px, inset);
+			@include linear-gradient($NavMainGradient);			
+			border-right: 1px solid black;
+			display: block;
+			padding: 0 23px;		
+			&:hover {
+		    	@include linear-gradient($NavMainHoverGradient); 
+				}
+			&.active {
+				@extend a:hover;
+				@include linear-gradient($NavMainActiveGradient);
+				@include box-shadow(#333, 0, 4px, 8px, 0, inset);
+				}
+			&:active {
+				@extend .active;
+				} 
+			&#quote {
+				@extend .gotham;
+				@include box-shadow(rgba(255,255,255,.35), 0, 2px, 0, -1px, inset);
+				@include border-radius(0 3px 3px 0);
+				@include linear-gradient($FpwebBlueGradient);
+				border-right: none;
+				margin-right: -2px;
+				padding: 0 23px 0 23px;
+				&:hover {
+					@include linear-gradient($FpwebBlueGradientHover);					
+					}
+				}
+			} 
+		}
+     
+	// logo and search areas in nav
+	
+	#logo {	
+		@include border-radius(3px 0 0 3px); 
+		&:hover {
+			cursor: pointer !important;
+			}	
+	 	a { 
+			@extend #logo; 
+			padding: 0 22px;
+			&:active {
+				@include box-shadow(none);
+				}	
+			}
+		img {
+			position: relative;
+			top: -5px;
+	    	}
+		}
+		
+
+			
+	#navMain {
+		a {
+			@extend .gothamBook;	
+			font-size: 14px;		
+			line-height: 36px;
+			color: #fafafa ;
+			text-decoration: none;
+			text-shadow: $ReverseBlackShadow;
+			&.active {
+				color: white;
+				text-shadow: 0 2px 1px black;
+				}
+			&:active {
+				@extend .active;
+				}
+			}
+		}
+		
+//end navMain
+
+
+

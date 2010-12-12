@@ -1,0 +1,101 @@
+// import base file
+
+	@import "base/base-main";
+	
+
+// buttons stylesheet 
+
+	  .button { 
+	  	@extend .arial; 
+	  	text-transform: uppercase;
+	    position: relative;
+	    margin-bottom: 20px;
+  		}
+	
+	  .button.blue {	
+	    @include actionButton(#056bcd, #019ae7, 30px, 14px);
+  		}
+	  		
+	  .button.green {
+	    @include actionButton(#5ba618, #71de50, 30px, 14px);
+ 	  	}
+	  	
+	  .button.orange {
+	  	@include actionButton(#c05c44, #c83434, 30px, 14px);
+	    }
+		  	
+	  .button.gray {
+	  	@include actionButton(#595959, #909090, 30px, 14px);
+	    }
+
+	  .button.large.blue {	
+	    @include actionButton(#056bcd, #019ae7, 60px, 18px);
+	    padding: 0 25px;
+    	}
+
+	  .button.large.green {
+	  	@include actionButton(#5ba618, #71de50, 60px, 18px);
+	  	padding: 0 25px;
+	  	}
+	
+
+  			
+	#menuToggle {
+		@include insetButton(#757575,#b9b9b9);
+
+		&.active {
+			@include linear-gradient(color-stops(#919191 0%, #535353 100%));
+			}
+
+		}	
+
+
+	#quoteToggle { 
+		@include insetButton(#056bcd,#5dc1f9);
+	//	@include insetButton(#2562d5,#88aae9); 
+		color: white !important;
+		}
+	
+		
+	 //   #menuToggle {
+	 //   	@include border-radius(5px);
+	 //   	@include box-shadow(rgba(0,0,0,.3), 0, 1px, 2px);		
+	 //   	@include linear-gradient(color-stops(lighten(#eaeaea, 5%), #eaeaea 2%, darken(#ddd, 5%)));
+	 //   	@extend .arial;
+	 //   	font-weight: bold;
+	 //   	display: inline-block;
+	 //   	color: #444;
+	 //   	font-size: 16px;
+	 //   	text-shadow: $LightGrayShadow;
+	 //   	line-height: 30px;
+	 //   	padding: 0 15px;
+	 //   	margin: 0;
+	 //   	height: 30px;
+	 //   	cursor: pointer;	
+	 //   	&:hover {
+	 //   		@include linear-gradient(color-stops(lighten(#eaeaea, 5%), #e5e5e5 2%, darken(#ddd, 8%)));		
+	 //   		color: #333;
+	 //   		}
+	 //   	&.active {
+	 //   		@include linear-gradient(color-stops(#919191 0%, #535353 100%));
+	 //   		//border: 1px solid transparent;
+	 //   		@include multi-shadow(0 1px 1px 0 rgba(0,0,0,.8) inset, 0 1px 0 rgba(255,255,255,1));
+	 //   		color: #fefefe;
+	 //   		text-shadow: 0 1px #222222;
+	 //   		&:hover {
+	 //   			@include linear-gradient(color-stops(#b9b9b9 0%, #757575 100%));
+	 //   			color: #fefefe;
+	 //   			}
+	 //   		}
+	 //   	&:active {
+	 //   		@extend .active;
+	 //   		}
+	 //   	}	
+     //
+     //
+	 //   #quoteToggle { 
+	 //   	@extend #menuToggle; 
+	 //   	@include linear-gradient(color-stops(#019ae7, #056bcd));	
+	 //   	color: white !important;
+	 //   	text-shadow: $ReverseBlackShadow;	
+	 //   	}

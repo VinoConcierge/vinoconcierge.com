@@ -1,0 +1,121 @@
+// @font-face definitions for icon families
+
+	@font-face {
+		font-family: 'Pictos1';
+		src: url('../webfonts/pictos/pictos1-webfont.eot');
+		src: url('../webfonts/pictos/pictos1-webfont.woff') format('woff'), url('../webfonts/pictos/pictos1-webfont.ttf') format('truetype'), url('../webfonts/pictos/pictos1-webfont.svg#webfont6GmxOLW3') format('svg');
+		font-weight: normal;
+		font-style: normal;
+		}
+
+	@font-face {
+		font-family: 'Pictos2';
+		src: url('../webfonts/pictos/pictos2-webfont.eot');
+		src: url('../webfonts/pictos/pictos2-webfont.woff') format('woff'), url('../webfonts/pictos/pictos2-webfont.ttf') format('truetype'), url('../webfonts/pictos/pictos2-webfont.svg#webfontg2UYTwUp') format('svg');
+		font-weight: normal;
+		font-style: normal;
+		}
+
+	@font-face {
+		font-family: 'Pictos3';
+		src: url('../webfonts/pictos/pictos3-webfont.eot');
+		src: url('../webfonts/pictos/pictos3-webfont.woff') format('woff'), url('../webfonts/pictos/pictos3-webfont.ttf') format('truetype'), url('../webfonts/pictos/pictos3-webfont.svg#webfontU2E3isTo') format('svg');
+		font-weight: normal;
+		font-style: normal;
+		}
+
+	@font-face {
+		font-family: 'Pictos4';
+		src: url('../webfonts/pictos/pictos4-webfont.eot');
+		src: url('../webfonts/pictos/pictos4-webfont.woff') format('woff'), url('../webfonts/pictos/pictos4-webfont.ttf') format('truetype'), url('../webfonts/pictos/pictos4-webfont.svg#webfont0mfGi0qe') format('svg');
+		font-weight: normal;
+		font-style: normal;
+		}
+
+	@font-face {
+		font-family: 'Pictos5';
+		src: url('../webfonts/pictos/pictos5-webfont.eot');
+		src: url('../webfonts/pictos/pictos5-webfont.woff') format('woff'), url('../webfonts/pictos/pictos5-webfont.ttf') format('truetype'), url('../webfonts/pictos/pictos5-webfont.svg#webfontdsTQVzAa') format('svg');
+		font-weight: normal;
+		font-style: normal;
+		}
+
+	@font-face {
+		font-family: 'Pictos6';
+		src: url('../webfonts/pictos/pictos6-webfont.eot');
+		src: url('../webfonts/pictos/pictos6-webfont.woff') format('woff'), url('../webfonts/pictos/pictos6-webfont.ttf') format('truetype'), url('../webfonts/pictos/pictos6-webfont.svg#webfontqL9Wwp6P') format('svg');
+		font-weight: normal;
+		font-style: normal;
+		}
+
+// import base file
+
+	@import "base/base-main";	
+
+	.icon1 { font-family: 'Pictos1'; }
+	
+	.icon2 { font-family: 'Pictos2'; }
+	
+	.icon3 { font-family: 'Pictos3'; }
+		
+	.icon4 { font-family: 'Pictos4'; }
+
+	.icon5 { font-family: 'Pictos5'; }
+
+	.icon6 { font-family: 'Pictos6'; }
+
+
+// icons template partial - give actual page elements their icons here
+		
+	.requestInfo:after {
+		@include iconAfter;
+		@include compose2;
+		font-size: 18px;		
+		}
+
+	.versus:before {
+		@include iconBefore;
+		@include arrowBranch3;
+		font-size: 18px;
+		}
+		
+	.features:before {
+		@include iconBefore;
+		@include lines; 
+		font-size: 18px;
+		}
+		
+	.cloud:before {
+		@include iconBefore;
+		@include cloud3;
+		font-size: 18px;
+		}
+
+	.checked:before {
+		@include iconBefore;
+		@include check2;
+		color: #00aedb;
+		font-size: 18px;
+		}
+	
+	ul.capList {
+		&:before {
+			content: "";
+			}
+		li:before {
+			@include iconBefore;
+			@include check1;
+			color: #00aedb;
+			font-size: 14px;
+			}	
+		}
+	
+		
+		
+  	.more:after {
+    	@include iconAfter;
+    	@include arrowMore1;
+    	font-size: 13px;
+    	}
+		
+					

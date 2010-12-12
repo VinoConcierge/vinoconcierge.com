@@ -1,0 +1,5 @@
+#header .module {width: 610px;margin-left: 0;}
+#header .module ul {float: right;}
+#nav ul li li:hover, #nav ul li li.hover {position: static;}
+ol.commentlist {margin-left: 0;}
+form#commentform input {margin-bottom: 10px;padding: 0px 5px 2px 5px;}

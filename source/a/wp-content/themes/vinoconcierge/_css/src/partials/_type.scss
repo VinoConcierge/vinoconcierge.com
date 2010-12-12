@@ -1,0 +1,164 @@
+// @font-face definitions for custom typography
+
+
+	@font-face {
+		font-family: 'GothamWebBook';
+		src: url('../webfonts/gotham/gotham-book-webfont.eot');
+		src: url('../webfonts/gotham/gotham-book-webfont.woff') format('woff'), url('../webfonts/gotham/gotham-book-webfont.ttf') format('truetype'), url('../webfonts/gotham/gotham-book-webfont.svg#webfontTw6obO2X') format('svg');
+		font-weight: normal;
+		font-style: normal;
+		}
+		
+	@font-face {
+		font-family: 'GothamWeb';
+		src: url('../webfonts/gotham/gotham-medium-webfont.eot');
+		src: url('../webfonts/gotham/gotham-medium-webfont.woff') format('woff'), url('../webfonts/gotham/gotham-medium-webfont.ttf') format('truetype'), url('../webfonts/gotham/gotham-medium-webfont.svg#webfontTw6obO2X') format('svg');
+		font-weight: normal;
+		font-style: normal;
+		}
+		
+	@font-face {
+		font-family: 'MyriadWebRegular';
+		src: url('webfonts/myriad-pro/myriadpro-regular-webfont.eot');
+		src: url('../webfonts/myriad-pro/myriadpro-regular-webfont.woff') format('woff'), url('../webfonts/myriad-pro/myriadpro-regular-webfont.ttf') format('truetype'), url('../webfonts/myriad-pro/myriadpro-regular-webfont.svg#webfonttwCszVV2') format('svg');
+		font-weight: normal;
+		font-style: normal;
+		}
+		
+	@font-face {
+		font-family: 'MyriadWebSemiBold';
+		src: url('webfonts/myriad-pro/myriadpro-semibold-webfont.eot');
+		src: url('../webfonts/myriad-pro/myriadpro-semibold-webfont.woff') format('woff'), url('../webfonts/myriad-pro/myriadpro-semibold-webfont.ttf') format('truetype'), url('../webfonts/myriad-pro/myriadpro-semibold-webfont.svg#webfonttwCszVV2') format('svg');
+		font-weight: normal;
+		font-style: normal;
+		}
+
+	@font-face {
+		font-family: 'MyriadWebBold';
+		src: url('../webfonts/myriad-pro/myriadpro-bold-webfont.eot');
+		src: url('../webfonts/myriad-pro/myriadpro-bold-webfont.woff') format('woff'), url('../webfonts/myriad-pro/myriadpro-bold-webfont.ttf') format('truetype'), url('../webfonts/myriad-pro/myriadpro-bold-webfont.svg#webfontezJJZXyC') format('svg');
+		font-weight: normal;
+		font-style: normal;
+		}
+
+// import base file
+
+	@import "base/base-main";
+
+
+	.lucida {
+		@include Lucida;
+		}
+
+	.arial {
+		@include Arial;
+		}
+		
+	.gotham {
+		@include Gotham;
+		}
+		
+	.gothamBook {
+		@include GothamBook;
+		}
+	
+	.myriadRegular {
+		@include MyriadRegular;
+		}
+		
+	.myriadSemiBold {
+		@include MyriadSemiBold;
+		}
+
+	.myriadBold {
+		@include MyriadBold;
+		}
+
+
+/* global copy and header typography styles */
+
+	body, html {
+		@extend .lucida;
+		@include NormalSize;
+		}
+	
+	#{headers(all)} {
+		color: #111;
+		letter-spacing: -1px;
+		text-shadow: $WhiteShadow;
+		margin: 15px 0 20px;
+		}	
+	
+	h1 { 
+		@extend .gotham; 
+		font-size: 20px;
+		position: relative;
+		left: 10px;
+		top: 5px;
+		}
+	
+	#{headers(2,3)} {
+		@include MyriadBold;
+		font-size: 32px;
+		}
+
+	h3 {
+		font-size: 26px;
+		margin-bottom: 15px;
+		}
+	
+	#{headers(4,6)} {
+		@include Arial;
+		font-weight: bold;
+		font-size: 16px;
+		margin-bottom: 5px;
+		}
+	
+	hgroup {
+		margin-bottom: 20px !important;
+		& > :first-child {
+			margin-bottom: 5px;
+			padding: 0;
+			}
+		& > :last-child {
+			color: #333;
+			font-weight: normal;
+			font-size: 18px;
+			margin: 0;
+			padding: 0;
+			letter-spacing: -1px;
+			}
+		}
+	
+	p {
+		color: #282828;
+		padding: 0 25px 20px 0;
+
+		}
+	
+	a {
+		@include link-colors(#0088cc, #0099ff, #0099ff, #0099ff, #0099ff);
+		text-decoration: none;
+		}
+	
+	.more:after {
+		content: "";
+		}
+	
+	ul {
+		li {
+			list-style-type: none;
+			}
+		&.capList {
+			clear: both;
+			display: block;
+			padding: 0 0 30px;
+			li {
+				display: inline;
+				float: left;
+				font-size: 16px;
+				margin-right: 30px;
+				}	
+			}
+		}
+	

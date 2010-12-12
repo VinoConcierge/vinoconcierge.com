@@ -1,0 +1,55 @@
+/* Core Essential */
+
+.aligncenter,div.aligncenter {display:block; margin-left:auto; margin-right:auto;}
+.alignleft {float:left;}
+.alignright {float:right;}
+.wp-caption {border:1px solid #ddd; text-align:center; background-color:#f3f3f3; padding-top:4px; margin:10px; -moz-border-radius:3px; -webkit-border-radius:3px;}
+.wp-caption img {margin:0; padding:0; border:0 none;}
+.wp-caption p.wp-caption-text {font-size:11px; line-height:17px; padding:0 4px 5px; margin:0;}
+
+/* Blog */
+
+.blog_nav {padding: 10px 0 0 0;}
+
+/* Showcase */
+
+div#showcase div.showcase a.readon2 {margin-right: 35px;}
+div#showcase div.showcase {padding: 0 20px;}
+
+/* Archive */
+
+.article-info-surround {font-size: 80%;margin-top: 15px;padding: 7px 15px 5px;}
+.search_not_found {margin-left: 30px;margin-top: 20px;}
+
+/* Single */
+
+.entry_post_footer {font-size: 80%;}
+
+/* Comments */
+
+.admincomment {background: #FFF3A3;color: #333333;}
+ol.commentlist {margin-top: 0;list-style: none;padding-left: 0;overflow: hidden;}
+li.single-comment {padding: 15px 20px;}
+.commenttext {float: left;width: 88%;}
+.commenttext p {padding-right: 15px;}
+.comment_author_gravatar {float: right;}
+
+/* Comment Form */
+
+.form_button_send input.button {background: none;border: none;font-weight:bold;font-style:italic;padding: 2px 0 0 0;color: #fff;}
+.form_user_text_field {width: 96%;padding: 5px;height: 120px;}
+.form_button_send {float: right;margin-right: 20px;}
+form#commentform {margin: 0 auto;width: 98%;font-size: 90%;}
+form#commentform label {font-size: 100%;line-height: 160%;}
+form#commentform input {margin-bottom: 10px;padding: 2px 5px 2px 5px;}
+form#commentform textarea {font-family: Arial, Verdana;font-size: 100%;}
+.fill_field {float: left;width: 28%;margin-right: 15px;}
+.fill_field input {width: 95%;}
+
+/* Other */
+
+span.attention {display: block;padding: 8px 10px 8px 15px;margin: 15px 0;color: #B79000;border: 1px solid #E7BD72;}
+
+/* RokBox */
+.rokbox-example img {border:5px solid #EEEEEE;padding:5px;}
+.rokbox-example div.center {text-align:center;}

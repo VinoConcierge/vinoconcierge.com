@@ -70,7 +70,7 @@ font-style:normal
 }
 .lucida, body, html, input, textarea { font-family:"lucida sans unicode", "lucida grande", Arial, Helvetica, sans-serif }
 .arial, .button, #menuToggle, #quoteToggle { font-family:Arial, Helvetica, sans-serif }
-.gotham, h1, #navMain a#quote { font-family:"GothamWeb", Arial, Helvetica, sans-serif }
+.gotham, h1, .h1, #navMain a#quote { font-family:"GothamWeb", Arial, Helvetica, sans-serif }
 .gothamBook, #navMain a { font-family:"GothamWebBook", Arial, Helvetica, sans-serif }
 .myriadRegular { font-family:"MyriadWebRegular", Arial, Helvetica, sans-serif }
 .myriadSemiBold { font-family:"MyriadWebSemibold", Arial, Helvetica, sans-serif }
@@ -80,31 +80,31 @@ body, html
 	font-size:13px;
 	line-height:21px
 }
-h1, h2, h3, h4, .featurettes .box > :first-child, .featurettes li > :first-child, h5, h6
+h1, .h1, h2, .h2, h3, .h3, h4, .h4, .featurettes .box > :first-child, .featurettes li > :first-child, h5, .h5, h6, .h6
 {
 	color:#111;
 	letter-spacing:-1px;
 	text-shadow:0 1px #fff;
 	margin:15px 0 20px
 }
-h1
+h1, .h1
 {
 	font-size:20px;
 	position:relative;
 	left:10px;
 	top:5px
 }
-h2, h3
+h2, h3, .h2, .h3
 {
 	font-family:"MyriadWebBold", Arial, Helvetica, sans-serif;
 	font-size:32px
 }
-h3
+h3, .h3
 {
 	font-size:26px;
 	margin-bottom:15px
 }
-h4, .featurettes .box > :first-child, .featurettes li > :first-child, h5, h6
+h4, .h4, .featurettes .box > :first-child, .featurettes li > :first-child, h5, .h5, h6, .h6
 {
 	font-family:Arial, Helvetica, sans-serif;
 	font-weight:bold;
@@ -217,7 +217,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 	padding:0;
 	margin:0
 }
-body { background:url("../../../_images/pattern.png") #ececec }
+body { background:url("wp-content/themes/vinoconcierge/_images/pattern.png") #ececec }
 .wrapped, .container, .container.hero, .container.hero .message, #navMain, #siloHeader
 {
 	width:980px;
@@ -344,11 +344,11 @@ article hr
 }
 aside
 {
-	-pie-background:url("../../../_images/noise-dark.png"), linear-gradient(top, #071426, #0f2f59);
+	-pie-background:url("wp-content/themes/vinoconcierge/_images/noise-dark.png"), linear-gradient(top, #071426, #0f2f59);
 	behavior:url(_includes/PIE.htc);
 	z-index:999;
-	background-image:url("../../../_images/noise-dark.png"), -webkit-gradient(linear, 0% 0%, 0% 100%, color-stop(0%, #071426), color-stop(100%, #0f2f59));
-	background-image:url("../../../_images/noise-dark.png"), -moz-linear-gradient(top, #071426 0%, #0f2f59 100%);
+	background-image:url("wp-content/themes/vinoconcierge/_images/noise-dark.png"), -webkit-gradient(linear, 0% 0%, 0% 100%, color-stop(0%, #071426), color-stop(100%, #0f2f59));
+	background-image:url("wp-content/themes/vinoconcierge/_images/noise-dark.png"), -moz-linear-gradient(top, #071426 0%, #0f2f59 100%);
 	background-image:linear-gradient(top, #071426 0%, #0f2f59 100%);
 	overflow:hidden;
 *zoom:1;
@@ -571,7 +571,7 @@ strong { font-weight:bold }
 }
 #siloNav a:hover, #siloNav #navMain a.active, #navMain #siloNav a.active, #siloNav #navMain a:active, #navMain #siloNav a:active, #siloNav #navMain a#menuToggle:active, #navMain #siloNav a#menuToggle:active, #siloNav #navMain a#quoteToggle:active, #navMain #siloNav a#quoteToggle:active { background:rgba(0, 0, 0, 0.015) }
 #siloNav a:hover, #siloNav #navMain a.active, #navMain #siloNav a.active, #siloNav #navMain a:active, #navMain #siloNav a:active, #siloNav #navMain a#menuToggle:active, #navMain #siloNav a#menuToggle:active, #siloNav #navMain a#quoteToggle:active, #navMain #siloNav a#quoteToggle:active { color:#4183c4 }
-#siloNav li.active a, #siloNav li#menuToggle:active a, #siloNav li#quoteToggle:active a
+#siloNav li.active a, #siloNav li.current_page_item a, #siloNav li#menuToggle:active a, #siloNav li#quoteToggle:active a
 {
 	color:black;
 	background:rgba(0, 0, 0, 0.08)
@@ -594,6 +594,8 @@ strong { font-weight:bold }
 	height:50px;
 	overflow:hidden
 }
+#siloHeader .h1 a, #siloHeader h1 a { color: #111; }
+#siloHeader .h1 a:hover, #siloHeader h1 a:hover { color:#0099ff; }
 #menuToggle
 {
 	position:absolute;
@@ -608,11 +610,11 @@ strong { font-weight:bold }
 }
 #menuContainer
 {
-	-pie-background:url("../../../_images/noise-dark.png"), linear-gradient(top, #071426, #0f2f59);
+	-pie-background:url("wp-content/themes/vinoconcierge/_images/noise-dark.png"), linear-gradient(top, #071426, #0f2f59);
 	behavior:url(_includes/PIE.htc);
 	z-index:999;
-	background-image:url("../../../_images/noise-dark.png"), -webkit-gradient(linear, 0% 0%, 0% 100%, color-stop(0%, #071426), color-stop(100%, #0f2f59));
-	background-image:url("../../../_images/noise-dark.png"), -moz-linear-gradient(top, #071426 0%, #0f2f59 100%);
+	background-image:url("wp-content/themes/vinoconcierge/_images/noise-dark.png"), -webkit-gradient(linear, 0% 0%, 0% 100%, color-stop(0%, #071426), color-stop(100%, #0f2f59));
+	background-image:url("wp-content/themes/vinoconcierge/_images/noise-dark.png"), -moz-linear-gradient(top, #071426 0%, #0f2f59 100%);
 	background-image:linear-gradient(top, #071426 0%, #0f2f59 100%);
 	-moz-box-shadow:0 -2px 20px 0 #071426 inset;
 	-webkit-box-shadow:0 -2px 20px 0 #071426 inset;
@@ -761,7 +763,7 @@ strong { font-weight:bold }
 .message#relax
 {
 	height:340px;
-	background:url("../../../_images/hero_relax-2010.jpg") transparent
+	background:url("wp-content/themes/vinoconcierge/_images/hero_relax-2010.jpg") transparent
 }
 .message#relax img
 {

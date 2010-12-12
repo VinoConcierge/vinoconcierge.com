@@ -1,0 +1,28 @@
+
+	@import "base/base-main";
+
+// global ie stylesheet definitions
+	
+	#navMain {
+		ul, li, a {
+			@include pie;
+			}
+		}    
+				
+	#mastHead, #navMain, #siloHeader, #siloMenu, #menuToggle, 
+	#quoteToggle, .container, .button, .column, .innerContent, 
+	.message {
+			@include pie; 
+			-pie-box-shadow: none;
+		}
+		
+	.container {
+		border: 1px solid #d0d0d0;
+		border-bottom: 1px solid #aaa;
+		border-top: 1px solid #fff;
+		}
+	
+	li#siteSearch { -pie-background: transparent !important; }
+	
+	#menuToggle span { border: 1px solid #fafafa; } 
+	#quoteToggle span { border: 1px solid #76b3ef; }
